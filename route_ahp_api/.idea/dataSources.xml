@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="joanfern_bdv1@localhost" uuid="6e49f876-e694-4578-8025-e29be34d25f6">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/joanfern_bdv1</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="bd_clinicav2@localhost" uuid="c55f9259-6035-4df8-aa2b-6212add6cdb1">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/bd_clinicav2</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="bd_clinicav3@localhost" uuid="9b2a6fbb-02a8-4ff1-acd0-05b7e653a23e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/bd_clinicav3</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="bd_muni_recycle@localhost" uuid="50ea42da-44f8-492b-bd56-dbdea697285d">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/bd_muni_recycle</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="bd_reciclaje@localhost" uuid="439262b2-8b77-4ba6-8829-69d43dec0930">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/bd_reciclaje</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="bd_bances@localhost" uuid="7b3e37c6-4ad2-46a9-bdd0-1d5751d1b676">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/bd_bances</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="bd_segurityd@localhost" uuid="72cd89fd-f52e-4bec-848a-163b382cf0a1">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/bd_segurity</jdbc-url>
+    </data-source>
+  </component>
+</project>

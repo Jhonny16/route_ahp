@@ -1,0 +1,1655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="bd_bances@localhost">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.17">
+    <root id="1">
+      <ServerVersion>10.6</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="2255">
+      <ObjectId>116925</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="3" parent="1" name="alta">
+      <ObjectId>117664</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="4" parent="1" name="alta_v12">
+      <ObjectId>185030</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="5" parent="1" name="amecsa">
+      <ObjectId>132980</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="6" parent="1" name="asitrans">
+      <ObjectId>199129</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="7" parent="1" name="bd_arn">
+      <ObjectId>219784</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="8" parent="1" name="bd_bances">
+      <ObjectId>267132</ObjectId>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>174616</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Relations>sequence|table|267246|267243|1
+sequence|table|267183|267180|1
+sequence|table|267190|267187|1
+sequence|table|267201|267198|1
+sequence|table|267206|267203|1
+sequence|table|267211|267208|1
+sequence|table|267216|267213|1
+sequence|table|267235|267232|1
+sequence|table|267196|267192|1
+sequence|table|267222|267218|1
+sequence|table|267241|267237|1
+sequence|table|267230|267224|1
+sequence|table|267185|267172|1
+sequence|table|267170|267164|1
+sequence|table|267162|267157|1
+sequence|table|267155|267151|1
+sequence|table|267136|267133|1
+sequence|table|267141|267138|1
+sequence|table|267146|267143|1
+</Relations>
+    </database>
+    <database id="9" parent="1" name="bd_clinica">
+      <ObjectId>240059</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="10" parent="1" name="bd_clinicav3">
+      <ObjectId>70251</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="11" parent="1" name="bd_contable">
+      <ObjectId>41075</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="12" parent="1" name="bd_credito">
+      <ObjectId>72787</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="13" parent="1" name="bd_creditos">
+      <ObjectId>72994</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="14" parent="1" name="bd_harbin">
+      <ObjectId>266055</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="15" parent="1" name="bd_harbinv2">
+      <ObjectId>266829</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="16" parent="1" name="bd_jorge">
+      <ObjectId>73972</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="17" parent="1" name="bd_jorgev2">
+      <ObjectId>116389</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="18" parent="1" name="bd_muni_recycle">
+      <ObjectId>240264</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="19" parent="1" name="bd_parroquiav2">
+      <ObjectId>74342</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="20" parent="1" name="bd_parroquiav4">
+      <ObjectId>88041</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="21" parent="1" name="bd_parroquiav5">
+      <ObjectId>99997</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="22" parent="1" name="bd_reciclaje">
+      <ObjectId>241735</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="23" parent="1" name="mistral">
+      <ObjectId>88762</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="24" parent="1" name="montano">
+      <ObjectId>250078</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="25" parent="1" name="poblete">
+      <ObjectId>116931</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="26" parent="1" name="postgres">
+      <ObjectId>13095</ObjectId>
+      <Comment>default administrative connection database</Comment>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="27" parent="1" name="reciclaje2">
+      <ObjectId>266472</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="28" parent="1" name="smartbc">
+      <ObjectId>101331</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <database id="29" parent="1" name="workshop001">
+      <ObjectId>74589</ObjectId>
+      <Owner>odoo</Owner>
+    </database>
+    <role id="30" parent="1" name="odoo">
+      <ObjectId>16384</ObjectId>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ValidUntil>infinity</ValidUntil>
+      <Replication>1</Replication>
+    </role>
+    <role id="31" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+    </role>
+    <role id="32" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+    </role>
+    <role id="33" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+    </role>
+    <role id="34" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+    </role>
+    <role id="35" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+    </role>
+    <role id="36" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="37" parent="8" name="information_schema">
+      <ObjectId>12804</ObjectId>
+      <StateNumber>353</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="38" parent="8" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+      <StateNumber>350</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="39" parent="8" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+      <StateNumber>113</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="40" parent="8" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+      <StateNumber>1</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="41" parent="8" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+      <StateNumber>113</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="42" parent="8" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <StateNumber>351</StateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>174617</IntrospectionStateNumber>
+      <Current>1</Current>
+    </schema>
+    <access-method id="43" parent="8" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="44" parent="8" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="45" parent="8" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="46" parent="8" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="47" parent="8" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="48" parent="8" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <extension id="49" parent="8" name="plpgsql">
+      <ObjectId>13081</ObjectId>
+      <Comment>PL/pgSQL procedural language</Comment>
+      <StateNumber>505</StateNumber>
+      <Version>1.0</Version>
+      <SchemaName>pg_catalog</SchemaName>
+      <SchemaId>11</SchemaId>
+    </extension>
+    <sequence id="50" parent="42" name="canje_id_seq">
+      <ObjectId>267136</ObjectId>
+      <StateNumber>174425</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="51" parent="42" name="centro_acopio_id_seq">
+      <ObjectId>267141</ObjectId>
+      <StateNumber>174430</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="52" parent="42" name="code_id_seq">
+      <ObjectId>267146</ObjectId>
+      <StateNumber>174435</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="53" parent="42" name="criterio_id_seq">
+      <ObjectId>267155</ObjectId>
+      <StateNumber>174442</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="54" parent="42" name="detalle_id_seq">
+      <ObjectId>267162</ObjectId>
+      <StateNumber>174447</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="55" parent="42" name="informacion_id_seq">
+      <ObjectId>267170</ObjectId>
+      <StateNumber>174452</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="56" parent="42" name="persona_criterio_id_seq">
+      <ObjectId>267183</ObjectId>
+      <StateNumber>174459</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="57" parent="42" name="persona_id_seq">
+      <ObjectId>267185</ObjectId>
+      <StateNumber>174462</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="58" parent="42" name="persona_premio_id_seq">
+      <ObjectId>267190</ObjectId>
+      <StateNumber>174467</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="59" parent="42" name="pintrash_id_seq">
+      <ObjectId>267196</ObjectId>
+      <StateNumber>174472</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="60" parent="42" name="position_id_seq">
+      <ObjectId>267201</ObjectId>
+      <StateNumber>174477</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="61" parent="42" name="premio_id_seq">
+      <ObjectId>267206</ObjectId>
+      <StateNumber>174482</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="62" parent="42" name="residuo_id_seq">
+      <ObjectId>267211</ObjectId>
+      <StateNumber>174487</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="63" parent="42" name="rol_id_seq">
+      <ObjectId>267216</ObjectId>
+      <StateNumber>174492</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="64" parent="42" name="sensibilizacion_id_seq">
+      <ObjectId>267222</ObjectId>
+      <StateNumber>174497</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="65" parent="42" name="servicio_id_seq">
+      <ObjectId>267230</ObjectId>
+      <StateNumber>174502</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="66" parent="42" name="status_id_seq">
+      <ObjectId>267235</ObjectId>
+      <StateNumber>174507</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="67" parent="42" name="venta_id_seq">
+      <ObjectId>267241</ObjectId>
+      <StateNumber>174512</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="68" parent="42" name="zona_id_seq">
+      <ObjectId>267246</ObjectId>
+      <StateNumber>174517</StateNumber>
+      <Owner>postgres</Owner>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="69" parent="42" name="canje">
+      <ObjectId>267133</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174597</StateNumber>
+    </table>
+    <table id="70" parent="42" name="centro_acopio">
+      <ObjectId>267138</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174610</StateNumber>
+    </table>
+    <table id="71" parent="42" name="code">
+      <ObjectId>267143</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174433</StateNumber>
+    </table>
+    <table id="72" parent="42" name="correlativo">
+      <ObjectId>267148</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174438</StateNumber>
+    </table>
+    <table id="73" parent="42" name="criterio">
+      <ObjectId>267151</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174600</StateNumber>
+    </table>
+    <table id="74" parent="42" name="detalle">
+      <ObjectId>267157</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174599</StateNumber>
+    </table>
+    <table id="75" parent="42" name="informacion">
+      <ObjectId>267164</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174450</StateNumber>
+    </table>
+    <table id="76" parent="42" name="persona">
+      <ObjectId>267172</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174612</StateNumber>
+    </table>
+    <table id="77" parent="42" name="persona_criterio">
+      <ObjectId>267180</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174601</StateNumber>
+    </table>
+    <table id="78" parent="42" name="persona_premio">
+      <ObjectId>267187</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174607</StateNumber>
+    </table>
+    <table id="79" parent="42" name="pintrash">
+      <ObjectId>267192</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174604</StateNumber>
+    </table>
+    <table id="80" parent="42" name="position">
+      <ObjectId>267198</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174605</StateNumber>
+    </table>
+    <table id="81" parent="42" name="premio">
+      <ObjectId>267203</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174607</StateNumber>
+    </table>
+    <table id="82" parent="42" name="residuo">
+      <ObjectId>267208</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174598</StateNumber>
+    </table>
+    <table id="83" parent="42" name="rol">
+      <ObjectId>267213</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174602</StateNumber>
+    </table>
+    <table id="84" parent="42" name="sensibilizacion">
+      <ObjectId>267218</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174612</StateNumber>
+    </table>
+    <table id="85" parent="42" name="servicio">
+      <ObjectId>267224</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174608</StateNumber>
+    </table>
+    <table id="86" parent="42" name="status">
+      <ObjectId>267232</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174609</StateNumber>
+    </table>
+    <table id="87" parent="42" name="venta">
+      <ObjectId>267237</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174611</StateNumber>
+    </table>
+    <table id="88" parent="42" name="zona">
+      <ObjectId>267243</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>174603</StateNumber>
+    </table>
+    <column id="89" parent="69" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174520</StateNumber>
+      <DefaultExpression>nextval(&apos;public.canje_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="90" parent="69" name="fecha_registro">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>174423</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="91" parent="69" name="pintrash_total">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174423</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="92" parent="69" name="persona_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174423</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="93" parent="69" name="premio_id">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174423</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="94" parent="69" name="canje_pkey">
+      <ObjectId>267267</ObjectId>
+      <StateNumber>174577</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="95" parent="69" name="canje_pkey">
+      <ObjectId>267268</ObjectId>
+      <StateNumber>174577</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>canje_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="96" parent="69" name="fk_canje_persona">
+      <ObjectId>267305</ObjectId>
+      <StateNumber>174596</StateNumber>
+      <ColNames>persona_id</ColNames>
+      <RefTableId>267172</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>persona</RefTableName>
+      <RefKeyName>persona_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="97" parent="69" name="fk_canje_premio">
+      <ObjectId>267310</ObjectId>
+      <StateNumber>174597</StateNumber>
+      <ColNames>premio_id</ColNames>
+      <RefTableId>267203</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>premio</RefTableName>
+      <RefKeyName>premio_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="98" parent="70" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174521</StateNumber>
+      <DefaultExpression>nextval(&apos;public.centro_acopio_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="99" parent="70" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(70)|0s</DataType>
+      <StateNumber>174428</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="100" parent="70" name="direccion">
+      <Position>3</Position>
+      <DataType>varchar(120)|0s</DataType>
+      <StateNumber>174428</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="101" parent="70" name="tipo">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>174428</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="102" parent="70" name="centro_acopio_pkey">
+      <ObjectId>267269</ObjectId>
+      <StateNumber>174578</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="103" parent="70" name="centro_acopio_pkey">
+      <ObjectId>267270</ObjectId>
+      <StateNumber>174578</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>centro_acopio_pkey</UnderlyingIndexName>
+    </key>
+    <column id="104" parent="71" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174522</StateNumber>
+      <DefaultExpression>nextval(&apos;public.code_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="105" parent="71" name="numero">
+      <Position>2</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174433</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="106" parent="71" name="fecha_creacion">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>174433</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="107" parent="71" name="code_pkey">
+      <ObjectId>267271</ObjectId>
+      <StateNumber>174579</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="108" parent="71" name="code_pkey">
+      <ObjectId>267272</ObjectId>
+      <StateNumber>174579</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>code_pkey</UnderlyingIndexName>
+    </key>
+    <column id="109" parent="72" name="secuencia">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174438</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="110" parent="72" name="tabla">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>174438</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="111" parent="73" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174523</StateNumber>
+      <DefaultExpression>nextval(&apos;public.criterio_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="112" parent="73" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174440</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="113" parent="73" name="valor">
+      <Position>3</Position>
+      <DataType>numeric(3,2 digit)|0s</DataType>
+      <StateNumber>174440</StateNumber>
+      <DefaultExpression>0.0</DefaultExpression>
+      <TypeId>1700</TypeId>
+    </column>
+    <index id="114" parent="73" name="criterio_pkey">
+      <ObjectId>267273</ObjectId>
+      <StateNumber>174580</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="115" parent="73" name="criterio_pkey">
+      <ObjectId>267274</ObjectId>
+      <StateNumber>174580</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>criterio_pkey</UnderlyingIndexName>
+    </key>
+    <column id="116" parent="74" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174524</StateNumber>
+      <DefaultExpression>nextval(&apos;public.detalle_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="117" parent="74" name="residuo_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174445</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="118" parent="74" name="venta_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174445</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="119" parent="74" name="cantidad">
+      <Position>4</Position>
+      <DataType>numeric(6,2 digit)|0s</DataType>
+      <StateNumber>174445</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="120" parent="74" name="precio">
+      <Position>5</Position>
+      <DataType>numeric(6,2 digit)|0s</DataType>
+      <StateNumber>174445</StateNumber>
+      <DefaultExpression>0.00</DefaultExpression>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="121" parent="74" name="sub_total">
+      <Position>6</Position>
+      <DataType>numeric(7,2 digit)|0s</DataType>
+      <StateNumber>174445</StateNumber>
+      <DefaultExpression>0.00</DefaultExpression>
+      <TypeId>1700</TypeId>
+    </column>
+    <index id="122" parent="74" name="detalle_pkey">
+      <ObjectId>267275</ObjectId>
+      <StateNumber>174581</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="123" parent="74" name="detalle_pkey">
+      <ObjectId>267276</ObjectId>
+      <StateNumber>174581</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>detalle_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="124" parent="74" name="fk_detalle_residuo">
+      <ObjectId>267315</ObjectId>
+      <StateNumber>174598</StateNumber>
+      <ColNames>residuo_id</ColNames>
+      <RefTableId>267208</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>residuo</RefTableName>
+      <RefKeyName>residuo_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="125" parent="74" name="fk_detalle_venta">
+      <ObjectId>267320</ObjectId>
+      <StateNumber>174599</StateNumber>
+      <ColNames>venta_id</ColNames>
+      <RefTableId>267237</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>venta</RefTableName>
+      <RefKeyName>venta_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="126" parent="75" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174525</StateNumber>
+      <DefaultExpression>nextval(&apos;public.informacion_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="127" parent="75" name="titulo">
+      <Position>2</Position>
+      <DataType>varchar(130)|0s</DataType>
+      <StateNumber>174450</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="128" parent="75" name="descripcion">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>174450</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="129" parent="75" name="imagen">
+      <Position>4</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>174450</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="130" parent="75" name="informacion_pkey">
+      <ObjectId>267277</ObjectId>
+      <StateNumber>174582</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="131" parent="75" name="informacion_pkey">
+      <ObjectId>267278</ObjectId>
+      <StateNumber>174582</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>informacion_pkey</UnderlyingIndexName>
+    </key>
+    <column id="132" parent="76" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174526</StateNumber>
+      <DefaultExpression>nextval(&apos;public.persona_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="133" parent="76" name="dni">
+      <Position>2</Position>
+      <DataType>varchar(9)|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="134" parent="76" name="nombres">
+      <Position>3</Position>
+      <DataType>varchar(120)|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="135" parent="76" name="ap_paterno">
+      <Position>4</Position>
+      <DataType>varchar(150)|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="136" parent="76" name="ap_materno">
+      <Position>5</Position>
+      <DataType>varchar(150)|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="137" parent="76" name="sexo">
+      <Position>6</Position>
+      <DataType>char|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="138" parent="76" name="fecha_nac">
+      <Position>7</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="139" parent="76" name="celular">
+      <Position>8</Position>
+      <DataType>varchar(9)|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="140" parent="76" name="direccion">
+      <Position>9</Position>
+      <DataType>varchar(240)|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="141" parent="76" name="correo">
+      <Position>10</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="142" parent="76" name="estado">
+      <Position>11</Position>
+      <DataType>char|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="143" parent="76" name="zona_id">
+      <Position>12</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="144" parent="76" name="rol_id">
+      <Position>13</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="145" parent="76" name="password">
+      <Position>14</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174455</StateNumber>
+      <DefaultExpression>&apos;$2y$10$qmivdZHdDQbmvN3.WqXr5ODjd4QvY3J944JvObueGqEqV27v2XJw2&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="146" parent="76" name="codigo">
+      <Position>15</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="147" parent="76" name="fecha_registro">
+      <Position>16</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="148" parent="76" name="valor">
+      <Position>17</Position>
+      <DataType>numeric(5,2 digit)|0s</DataType>
+      <StateNumber>174455</StateNumber>
+      <DefaultExpression>0.0</DefaultExpression>
+      <TypeId>1700</TypeId>
+    </column>
+    <index id="149" parent="76" name="persona_pkey">
+      <ObjectId>267281</ObjectId>
+      <StateNumber>174584</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="150" parent="76" name="persona_pkey">
+      <ObjectId>267282</ObjectId>
+      <StateNumber>174584</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>persona_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="151" parent="76" name="fk_persona_zona">
+      <ObjectId>267340</ObjectId>
+      <StateNumber>174603</StateNumber>
+      <ColNames>zona_id</ColNames>
+      <RefTableId>267243</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>zona</RefTableName>
+      <RefKeyName>pk_zona</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="152" parent="76" name="fk_persona_rol">
+      <ObjectId>267335</ObjectId>
+      <StateNumber>174602</StateNumber>
+      <ColNames>rol_id</ColNames>
+      <RefTableId>267213</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>rol</RefTableName>
+      <RefKeyName>rol_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="153" parent="77" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174527</StateNumber>
+      <DefaultExpression>nextval(&apos;public.persona_criterio_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="154" parent="77" name="persona_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174457</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="155" parent="77" name="criterio_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174457</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="156" parent="77" name="valor">
+      <Position>4</Position>
+      <DataType>numeric(5,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174457</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <index id="157" parent="77" name="persona_criterio_pkey">
+      <ObjectId>267279</ObjectId>
+      <StateNumber>174583</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="158" parent="77" name="persona_criterio_pkey">
+      <ObjectId>267280</ObjectId>
+      <StateNumber>174583</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>persona_criterio_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="159" parent="77" name="fk_pc_persona">
+      <ObjectId>267330</ObjectId>
+      <StateNumber>174601</StateNumber>
+      <ColNames>persona_id</ColNames>
+      <RefTableId>267172</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>persona</RefTableName>
+      <RefKeyName>persona_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="160" parent="77" name="fk_pc_criterio">
+      <ObjectId>267325</ObjectId>
+      <StateNumber>174600</StateNumber>
+      <ColNames>criterio_id</ColNames>
+      <RefTableId>267151</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>criterio</RefTableName>
+      <RefKeyName>criterio_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="161" parent="78" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174528</StateNumber>
+      <DefaultExpression>nextval(&apos;public.persona_premio_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="162" parent="78" name="fecha_registro">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174465</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="163" parent="78" name="descripcion">
+      <Position>3</Position>
+      <DataType>varchar(120)|0s</DataType>
+      <StateNumber>174465</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="164" parent="78" name="premio_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174465</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="165" parent="78" name="persona_id">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174465</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="166" parent="78" name="persona_premio_pkey">
+      <ObjectId>267283</ObjectId>
+      <StateNumber>174585</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="167" parent="78" name="persona_premio_pkey">
+      <ObjectId>267284</ObjectId>
+      <StateNumber>174585</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>persona_premio_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="168" parent="78" name="fk_pp_premio">
+      <ObjectId>267360</ObjectId>
+      <StateNumber>174607</StateNumber>
+      <ColNames>premio_id</ColNames>
+      <RefTableId>267203</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>premio</RefTableName>
+      <RefKeyName>premio_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="169" parent="78" name="fk_pp_persona">
+      <ObjectId>267355</ObjectId>
+      <StateNumber>174606</StateNumber>
+      <ColNames>persona_id</ColNames>
+      <RefTableId>267172</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>persona</RefTableName>
+      <RefKeyName>persona_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="170" parent="79" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174529</StateNumber>
+      <DefaultExpression>nextval(&apos;public.pintrash_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="171" parent="79" name="pintrash">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174470</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="172" parent="79" name="descuento">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174470</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="173" parent="79" name="servicio_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174470</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="174" parent="79" name="pintrash_pkey">
+      <ObjectId>267285</ObjectId>
+      <StateNumber>174586</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="175" parent="79" name="pintrash_pkey">
+      <ObjectId>267286</ObjectId>
+      <StateNumber>174586</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>pintrash_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="176" parent="79" name="fk_pintrash_persona">
+      <ObjectId>267345</ObjectId>
+      <StateNumber>174604</StateNumber>
+      <ColNames>servicio_id</ColNames>
+      <RefTableId>267224</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>servicio</RefTableName>
+      <RefKeyName>servicio_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="177" parent="80" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174530</StateNumber>
+      <DefaultExpression>nextval(&apos;public.position_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="178" parent="80" name="latitud">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>174475</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="179" parent="80" name="longitud">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>174475</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="180" parent="80" name="lat_actual">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>174475</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="181" parent="80" name="lon_actual">
+      <Position>5</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>174475</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="182" parent="80" name="servicio_id">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174475</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="183" parent="80" name="position_pkey">
+      <ObjectId>267289</ObjectId>
+      <StateNumber>174588</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="184" parent="80" name="position_pkey">
+      <ObjectId>267290</ObjectId>
+      <StateNumber>174588</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>position_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="185" parent="80" name="fk_position_service">
+      <ObjectId>267350</ObjectId>
+      <StateNumber>174605</StateNumber>
+      <ColNames>servicio_id</ColNames>
+      <RefTableId>267224</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>servicio</RefTableName>
+      <RefKeyName>servicio_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="186" parent="81" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174531</StateNumber>
+      <DefaultExpression>nextval(&apos;public.premio_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="187" parent="81" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <StateNumber>174480</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="188" parent="81" name="stock">
+      <Position>3</Position>
+      <DataType>numeric(6,2 digit)|0s</DataType>
+      <StateNumber>174480</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="189" parent="81" name="precio">
+      <Position>4</Position>
+      <DataType>numeric(6,2 digit)|0s</DataType>
+      <StateNumber>174480</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="190" parent="81" name="pintrash">
+      <Position>5</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <StateNumber>174480</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="191" parent="81" name="imagen">
+      <Position>6</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>174480</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="192" parent="81" name="premio_pkey">
+      <ObjectId>267291</ObjectId>
+      <StateNumber>174589</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="193" parent="81" name="premio_pkey">
+      <ObjectId>267292</ObjectId>
+      <StateNumber>174589</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>premio_pkey</UnderlyingIndexName>
+    </key>
+    <column id="194" parent="82" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174532</StateNumber>
+      <DefaultExpression>nextval(&apos;public.residuo_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="195" parent="82" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(70)|0s</DataType>
+      <StateNumber>174485</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="196" parent="82" name="residuo_pkey">
+      <ObjectId>267293</ObjectId>
+      <StateNumber>174590</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="197" parent="82" name="residuo_pkey">
+      <ObjectId>267294</ObjectId>
+      <StateNumber>174590</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>residuo_pkey</UnderlyingIndexName>
+    </key>
+    <column id="198" parent="83" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174533</StateNumber>
+      <DefaultExpression>nextval(&apos;public.rol_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="199" parent="83" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <StateNumber>174490</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="200" parent="83" name="estado">
+      <Position>3</Position>
+      <DataType>char|0s</DataType>
+      <StateNumber>174490</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <index id="201" parent="83" name="rol_pkey">
+      <ObjectId>267295</ObjectId>
+      <StateNumber>174591</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="202" parent="83" name="rol_pkey">
+      <ObjectId>267296</ObjectId>
+      <StateNumber>174591</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>rol_pkey</UnderlyingIndexName>
+    </key>
+    <column id="203" parent="84" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174534</StateNumber>
+      <DefaultExpression>nextval(&apos;public.sensibilizacion_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="204" parent="84" name="respuesta">
+      <Position>2</Position>
+      <DataType>char|0s</DataType>
+      <StateNumber>174495</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="205" parent="84" name="fecha_registro">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>174495</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="206" parent="84" name="persona_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174495</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="207" parent="84" name="sensibilizacion_pkey">
+      <ObjectId>267297</ObjectId>
+      <StateNumber>174592</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="208" parent="84" name="sensibilizacion_pkey">
+      <ObjectId>267298</ObjectId>
+      <StateNumber>174592</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sensibilizacion_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="209" parent="84" name="kf_sensi_persona">
+      <ObjectId>267385</ObjectId>
+      <StateNumber>174612</StateNumber>
+      <ColNames>persona_id</ColNames>
+      <RefTableId>267172</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>persona</RefTableName>
+      <RefKeyName>persona_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="210" parent="85" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174535</StateNumber>
+      <DefaultExpression>nextval(&apos;public.servicio_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="211" parent="85" name="code">
+      <Position>2</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="212" parent="85" name="tiempo_aprox_atencion">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="213" parent="85" name="hora_respuesta">
+      <Position>4</Position>
+      <DataType>time|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>1083</TypeId>
+    </column>
+    <column id="214" parent="85" name="hora_llegada">
+      <Position>5</Position>
+      <DataType>time|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>1083</TypeId>
+    </column>
+    <column id="215" parent="85" name="calificacion">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="216" parent="85" name="estado">
+      <Position>7</Position>
+      <DataType>varchar(15)|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="217" parent="85" name="fecha">
+      <Position>8</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174500</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="218" parent="85" name="hora">
+      <Position>9</Position>
+      <DataType>time|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>1083</TypeId>
+    </column>
+    <column id="219" parent="85" name="referencia">
+      <Position>10</Position>
+      <DataType>varchar(120)|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="220" parent="85" name="latitud">
+      <Position>11</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="221" parent="85" name="longitud">
+      <Position>12</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="222" parent="85" name="proveedor_id">
+      <Position>13</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174500</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="223" parent="85" name="reciclador_id">
+      <Position>14</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="224" parent="85" name="imagen">
+      <Position>15</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>174500</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <index id="225" parent="85" name="servicio_pkey">
+      <ObjectId>267299</ObjectId>
+      <StateNumber>174593</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="226" parent="85" name="servicio_pkey">
+      <ObjectId>267300</ObjectId>
+      <StateNumber>174593</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>servicio_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="227" parent="85" name="fk_serv_proveedor">
+      <ObjectId>267365</ObjectId>
+      <StateNumber>174608</StateNumber>
+      <ColNames>proveedor_id</ColNames>
+      <RefTableId>267172</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>persona</RefTableName>
+      <RefKeyName>persona_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="228" parent="86" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174536</StateNumber>
+      <DefaultExpression>nextval(&apos;public.status_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="229" parent="86" name="fecha">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174505</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="230" parent="86" name="hora">
+      <Position>3</Position>
+      <DataType>time|0s</DataType>
+      <StateNumber>174505</StateNumber>
+      <TypeId>1083</TypeId>
+    </column>
+    <column id="231" parent="86" name="name_status">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>174505</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="232" parent="86" name="reciclador_id">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174505</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="233" parent="86" name="status_pkey">
+      <ObjectId>267301</ObjectId>
+      <StateNumber>174594</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="234" parent="86" name="status_pkey">
+      <ObjectId>267302</ObjectId>
+      <StateNumber>174594</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>status_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="235" parent="86" name="fk_serv_proveedor">
+      <ObjectId>267370</ObjectId>
+      <StateNumber>174609</StateNumber>
+      <ColNames>reciclador_id</ColNames>
+      <RefTableId>267172</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>persona</RefTableName>
+      <RefKeyName>persona_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="236" parent="87" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174537</StateNumber>
+      <DefaultExpression>nextval(&apos;public.venta_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="237" parent="87" name="code">
+      <Position>2</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <StateNumber>174510</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="238" parent="87" name="fecha_registro">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174510</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="239" parent="87" name="estado">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>174510</StateNumber>
+      <DefaultExpression>&apos;Pendiente&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="240" parent="87" name="reciclador_id">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174510</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="241" parent="87" name="user_id">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174510</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="242" parent="87" name="acopio_temporal_id">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174510</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="243" parent="87" name="acopio_final_id">
+      <Position>8</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>174510</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="244" parent="87" name="total">
+      <Position>9</Position>
+      <DataType>numeric(7,2 digit)|0s</DataType>
+      <StateNumber>174510</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="245" parent="87" name="precio_total">
+      <Position>10</Position>
+      <DataType>numeric(7,2 digit)|0s</DataType>
+      <StateNumber>174510</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <index id="246" parent="87" name="venta_pkey">
+      <ObjectId>267303</ObjectId>
+      <StateNumber>174595</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="247" parent="87" name="venta_pkey">
+      <ObjectId>267304</ObjectId>
+      <StateNumber>174595</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>venta_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="248" parent="87" name="fk_venta_reciclador">
+      <ObjectId>267380</ObjectId>
+      <StateNumber>174611</StateNumber>
+      <ColNames>reciclador_id</ColNames>
+      <RefTableId>267172</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>persona</RefTableName>
+      <RefKeyName>persona_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="249" parent="87" name="fk_venta_acopio_temporal">
+      <ObjectId>267375</ObjectId>
+      <StateNumber>174610</StateNumber>
+      <ColNames>acopio_temporal_id</ColNames>
+      <RefTableId>267138</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>centro_acopio</RefTableName>
+      <RefKeyName>centro_acopio_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="250" parent="88" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>174538</StateNumber>
+      <DefaultExpression>nextval(&apos;public.zona_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="251" parent="88" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(120)|0s</DataType>
+      <StateNumber>174515</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="252" parent="88" name="pk_zona">
+      <ObjectId>267287</ObjectId>
+      <StateNumber>174587</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="253" parent="88" name="pk_zona">
+      <ObjectId>267288</ObjectId>
+      <StateNumber>174587</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>pk_zona</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

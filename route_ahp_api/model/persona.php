@@ -1,0 +1,424 @@
+<?php
+
+require_once '../datos/conexion.php';
+
+class persona extends conexion
+{
+
+    private $id;
+    private $nombre_completo;
+    private $documento_identidad;
+    private $fecha_registro;
+    private $celular;
+    private $direccion;
+    private $estado;
+    private $fecha_nacimiento;
+    private $sexo;
+    private $apoderado_id;
+    private $usuario;
+    private $rol_id;
+    private $documentos;
+    private $empresa;
+
+  /**
+   * @return mixed
+   */
+  public function getEmpresa()
+  {
+    return $this->empresa;
+  }
+
+  /**
+   * @param mixed $empresa
+   */
+  public function setEmpresa($empresa)
+  {
+    $this->empresa = $empresa;
+  }
+
+
+
+  /**
+   * @return mixed
+   */
+  public function getId()
+  {
+    return $this->id;
+  }
+
+  /**
+   * @param mixed $id
+   */
+  public function setId($id)
+  {
+    $this->id = $id;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getNombreCompleto()
+  {
+    return $this->nombre_completo;
+  }
+
+  /**
+   * @param mixed $nombre_completo
+   */
+  public function setNombreCompleto($nombre_completo)
+  {
+    $this->nombre_completo = $nombre_completo;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getDocumentoIdentidad()
+  {
+    return $this->documento_identidad;
+  }
+
+  /**
+   * @param mixed $documento_identidad
+   */
+  public function setDocumentoIdentidad($documento_identidad)
+  {
+    $this->documento_identidad = $documento_identidad;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFechaRegistro()
+  {
+    return $this->fecha_registro;
+  }
+
+  /**
+   * @param mixed $fecha_registro
+   */
+  public function setFechaRegistro($fecha_registro)
+  {
+    $this->fecha_registro = $fecha_registro;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getCelular()
+  {
+    return $this->celular;
+  }
+
+  /**
+   * @param mixed $celular
+   */
+  public function setCelular($celular)
+  {
+    $this->celular = $celular;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getDireccion()
+  {
+    return $this->direccion;
+  }
+
+  /**
+   * @param mixed $direccion
+   */
+  public function setDireccion($direccion)
+  {
+    $this->direccion = $direccion;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getEstado()
+  {
+    return $this->estado;
+  }
+
+  /**
+   * @param mixed $estado
+   */
+  public function setEstado($estado)
+  {
+    $this->estado = $estado;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFechaNacimiento()
+  {
+    return $this->fecha_nacimiento;
+  }
+
+  /**
+   * @param mixed $fecha_nacimiento
+   */
+  public function setFechaNacimiento($fecha_nacimiento)
+  {
+    $this->fecha_nacimiento = $fecha_nacimiento;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getSexo()
+  {
+    return $this->sexo;
+  }
+
+  /**
+   * @param mixed $sexo
+   */
+  public function setSexo($sexo)
+  {
+    $this->sexo = $sexo;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getApoderadoId()
+  {
+    return $this->apoderado_id;
+  }
+
+  /**
+   * @param mixed $apoderado_id
+   */
+  public function setApoderadoId($apoderado_id)
+  {
+    $this->apoderado_id = $apoderado_id;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getUsuario()
+  {
+    return $this->usuario;
+  }
+
+  /**
+   * @param mixed $usuario
+   */
+  public function setUsuario($usuario)
+  {
+    $this->usuario = $usuario;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getRolId()
+  {
+    return $this->rol_id;
+  }
+
+  /**
+   * @param mixed $rol_id
+   */
+  public function setRolId($rol_id)
+  {
+    $this->rol_id = $rol_id;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getDocumentos()
+  {
+    return $this->documentos;
+  }
+
+  /**
+   * @param mixed $documentos
+   */
+  public function setDocumentos($documentos)
+  {
+    $this->documentos = $documentos;
+  }
+
+
+
+    public function create()
+    {
+
+        try {
+
+
+            $sql = "insert into persona (nombre_completo, documento_identidad, fecha_registro, celular,
+              direccion, estado, fecha_nacimiento, sexo, apoderado_id, usuario, rol_id, empresa_id)
+                    values (:p_nombre_completo, :p_documento ,:p_fecha_registro, :p_celular, :p_direccion,
+                     :p_estado, :p_fecha_nacimiento, :p_sexo,
+                    :p_apoderado_id,:p_usuario,:p_rol, :p_empresa); ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_nombre_completo", $this->nombre_completo);
+            $sentencia->bindParam(":p_documento", $this->documento_identidad);
+            $sentencia->bindParam(":p_fecha_registro", $this->fecha_registro);
+            $sentencia->bindParam(":p_celular", $this->celular);
+            $sentencia->bindParam(":p_direccion", $this->direccion);
+            $sentencia->bindParam(":p_estado", $this->estado);
+            $sentencia->bindParam(":p_fecha_nacimiento", $this->fecha_nacimiento);
+            $sentencia->bindParam(":p_sexo", $this->sexo);
+            $sentencia->bindParam(":p_apoderado_id", $this->apoderado_id);
+            $sentencia->bindParam(":p_usuario", $this->usuario);
+            $sentencia->bindParam(":p_rol", $this->rol_id);
+            $sentencia->bindParam(":p_empresa", $this->empresa);
+            $sentencia->execute();
+            return True;
+
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
+    public function read()
+    {
+
+        try {
+            $sql = "select * from persona where id = :p_id";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
+
+    public function update()
+    {
+        $this->dblink->beginTransaction();
+
+        try {
+
+            $sql = "update persona set 
+                    nombre_completo = :p_nc,
+                    documento_identidad = :p_doc,
+                    celular = :p_celular,
+                    direccion = :p_direccion,
+                    sexo = :p_sexo,
+                    estado = :p_estado,
+                    fecha_nacimiento = :p_fn
+                    where id = :p_id ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_nc", $this->nombre_completo);
+            $sentencia->bindParam(":p_doc", $this->documento_identidad);
+            $sentencia->bindParam(":p_celular", $this->celular);
+            $sentencia->bindParam(":p_direccion", $this->direccion);
+            $sentencia->bindParam(":p_sexo", $this->sexo);
+            $sentencia->bindParam(":p_estado", $this->estado);
+            $sentencia->bindParam(":p_fn", $this->fecha_nacimiento);
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $this->dblink->commit();
+
+            return true;
+
+        } catch (Exception $exc) {
+            $this->dblink->rollBack();
+            throw $exc;
+        }
+    }
+
+    public function empresas_list()
+    {
+
+        try {
+            $sql = "select *, (case when estado ='A' then 'Activo' else 'No Activo' end) 
+                    from persona where rol_id = 2";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
+
+    public function update_perfil($cambio)
+    {
+        $this->dblink->beginTransaction();
+
+        try {
+
+            if ($cambio == 1) {
+                $clave = password_hash($this->clave, PASSWORD_DEFAULT);
+
+                $sql = "update persona set 
+                    dni = :p_dni,
+                    nombres = :p_nombres,
+                    ap_materno = :p_mateno,
+                    ap_paterno = :p_paterno,
+                    sexo = :p_sexo,
+                    fecha_nac = :p_fc,
+                    celular = :p_celular,
+                    direccion = :p_direccion,
+                    correo = :p_correo,
+                    password = :p_password
+                    where id = :p_persona_id ";
+                $sentencia = $this->dblink->prepare($sql);
+                $sentencia->bindParam(":p_dni", $this->dni);
+                $sentencia->bindParam(":p_nombres", $this->nombres);
+                $sentencia->bindParam(":p_mateno", $this->ap_materno);
+                $sentencia->bindParam(":p_paterno", $this->ap_paterno);
+                $sentencia->bindParam(":p_sexo", $this->sexo);
+                $sentencia->bindParam(":p_fc", $this->fn);
+                $sentencia->bindParam(":p_celular", $this->celular);
+                $sentencia->bindParam(":p_direccion", $this->direccion);
+                $sentencia->bindParam(":p_correo", $this->correo);
+                $sentencia->bindParam(":p_password", $clave);
+                $sentencia->bindParam(":p_persona_id", $this->id);
+
+            } else {
+
+                $sql = "update persona set 
+                    dni = :p_dni,
+                    nombres = :p_nombres,
+                    ap_materno = :p_mateno,
+                    ap_paterno = :p_paterno,
+                    sexo = :p_sexo,
+                    fecha_nac = :p_fc,
+                    celular = :p_celular,
+                    direccion = :p_direccion,
+                    correo = :p_correo
+                    where id = :p_persona_id ";
+                $sentencia = $this->dblink->prepare($sql);
+                $sentencia->bindParam(":p_dni", $this->dni);
+                $sentencia->bindParam(":p_nombres", $this->nombres);
+                $sentencia->bindParam(":p_mateno", $this->ap_materno);
+                $sentencia->bindParam(":p_paterno", $this->ap_paterno);
+                $sentencia->bindParam(":p_sexo", $this->sexo);
+                $sentencia->bindParam(":p_fc", $this->fn);
+                $sentencia->bindParam(":p_celular", $this->celular);
+                $sentencia->bindParam(":p_direccion", $this->direccion);
+                $sentencia->bindParam(":p_correo", $this->correo);
+                $sentencia->bindParam(":p_persona_id", $this->id);
+
+            }
+
+            $sentencia->execute();
+            $this->dblink->commit();
+            return true;
+
+        } catch (Exception $exc) {
+            $this->dblink->rollBack();
+            throw $exc;
+        }
+
+
+    }
+
+
+}
