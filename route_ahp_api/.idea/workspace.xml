@@ -42,42 +42,7 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="bd_segurity: database" type="162271b6:PgImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="bd_segurity: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="bd_segurity: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="bd_segurity: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="bd_segurity: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="colegio: table" type="69fad909:PgImplModel$LocalTable" />
+        <item name="roles" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
     <select />
@@ -88,59 +53,6 @@
         <option value="JavaScript File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>tiempo_apro</find>
-      <find>atender</find>
-      <find>referencia</find>
-      <find>insert</find>
-      <find>rowc</find>
-      <find>constra</find>
-      <find>cons</find>
-      <find>rowCo</find>
-      <find>rowCoun</find>
-      <find>asignar_a_servicio</find>
-      <find>position_create</find>
-      <find>premio_create</find>
-      <find>update</find>
-      <find>app_pjoan</find>
-      <find>esta</find>
-      <find>info</find>
-      <find>rowcou</find>
-      <find>count_pintrash</find>
-      <find>limit</find>
-      <find>pint</find>
-      <find>pintrash</find>
-      <find>Camino</find>
-      <find>rowC</find>
-      <find>count_p</find>
-      <find>canje</find>
-      <find>fec</find>
-      <find>fecha</find>
-      <find>rowco</find>
-      <find>row</find>
-      <find>fk_pc_persona</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-      <replace>modal modal-primary</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\xampp7\htdocs\app_pjoanfern\Modelo</dir>
-      <dir>C:\xampp7\htdocs\app_pjoanfern\util\lte\datatables.net</dir>
-      <dir>C:\xampp7\htdocs\app_pjoanfern\util\lte\datatables.net-bs</dir>
-      <dir>C:\xampp7\htdocs\app_pjoanfern\util\lte</dir>
-      <dir>C:\xampp7\htdocs\app_pjoanfern\util</dir>
-      <dir>C:\xampp7\htdocs\app_pjoanfern\Vista</dir>
-      <dir>C:\xampp7\htdocs\app_pjoanfern</dir>
-      <dir>C:\xampp7\htdocs\app_pjoanfern\js</dir>
-      <dir>C:\xampp7\htdocs\clinica_api\webservice</dir>
-      <dir>C:\xampp7\htdocs\clinica_api\model</dir>
-      <dir>$PROJECT_DIR$</dir>
-      <dir>$PROJECT_DIR$/webservice</dir>
-      <dir>$PROJECT_DIR$/model</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PHPExcel" />
@@ -203,7 +115,12 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@6f4a7c00" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@273f88ca" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@352c6575" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -383,6 +300,9 @@
       <workItem from="1582429786465" duration="6697000" />
       <workItem from="1582468767728" duration="4491000" />
       <workItem from="1582499714381" duration="13737000" />
+      <workItem from="1582596164837" duration="637000" />
+      <workItem from="1582599783985" duration="3452000" />
+      <workItem from="1582649660106" duration="11960000" />
     </task>
     <servers />
   </component>
@@ -402,26 +322,26 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="366" y="177" width="630" height="381" key="DUMP_DIALOG_DIMENSION_KEY/0.0.1366.735@0.0.1366.735" timestamp="1582484673609" />
-    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl" timestamp="1582484664466">
+    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl" timestamp="1582599825793">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.735@0.0.1366.735" timestamp="1582484664466" />
-    <state width="1276" height="131" key="GridCell.Tab.0.bottom" timestamp="1582520606206">
+    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.735@0.0.1366.735" timestamp="1582599825793" />
+    <state width="1276" height="135" key="GridCell.Tab.0.bottom" timestamp="1582669006083">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="131" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1582520606206" />
-    <state width="1276" height="131" key="GridCell.Tab.0.center" timestamp="1582520606203">
+    <state width="1276" height="135" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1582669006083" />
+    <state width="1276" height="135" key="GridCell.Tab.0.center" timestamp="1582669006083">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="131" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1582520606203" />
-    <state width="1276" height="131" key="GridCell.Tab.0.left" timestamp="1582520606201">
+    <state width="1276" height="135" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1582669006083" />
+    <state width="1276" height="135" key="GridCell.Tab.0.left" timestamp="1582669006082">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="131" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1582520606201" />
-    <state width="1276" height="131" key="GridCell.Tab.0.right" timestamp="1582520606204">
+    <state width="1276" height="135" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1582669006082" />
+    <state width="1276" height="135" key="GridCell.Tab.0.right" timestamp="1582669006083">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="131" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1582520606204" />
+    <state width="1276" height="135" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1582669006083" />
     <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog" timestamp="1582521383009">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -434,9 +354,9 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="187" y="4" key="SettingsEditor/0.0.1366.735@0.0.1366.735" timestamp="1582499731389" />
-    <state x="378" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1582468778713">
+    <state x="378" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1582599819683">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="378" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.735@0.0.1366.735" timestamp="1582468778713" />
+    <state x="378" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.735@0.0.1366.735" timestamp="1582599819683" />
   </component>
 </project>
