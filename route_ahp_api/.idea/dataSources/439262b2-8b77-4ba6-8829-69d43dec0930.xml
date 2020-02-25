@@ -89,24 +89,24 @@
       <Owner>postgres</Owner>
       <IntrospectionStateNumber>174645</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|250007|250009|1
-sequence|table|241736|241738|1
+      <Relations>sequence|table|241736|241738|1
 sequence|table|241744|241746|1
 sequence|table|241755|241757|1
-sequence|table|266662|266664|1
+sequence|table|250007|250009|1
+sequence|table|266812|266814|1
+sequence|table|249979|249981|1
 sequence|table|266670|266672|1
+sequence|table|266662|266664|1
 sequence|table|266693|266695|1
 sequence|table|266706|266708|1
 sequence|table|266747|266749|1
-sequence|table|266812|266814|1
-sequence|table|249979|249981|1
-sequence|table|266446|266448|1
-sequence|table|266459|266461|1
 sequence|table|266592|266594|1
 sequence|table|266607|266609|1
 sequence|table|266615|266617|1
 sequence|table|266623|266625|1
 sequence|table|266642|266644|1
+sequence|table|266446|266448|1
+sequence|table|266459|266461|1
 sequence|table|266000|266002|1
 </Relations>
     </database>

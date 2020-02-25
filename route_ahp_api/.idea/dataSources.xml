@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="joanfern_bdv1@localhost" uuid="6e49f876-e694-4578-8025-e29be34d25f6">
-      <driver-ref>mysql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/joanfern_bdv1</jdbc-url>
-      <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="zeroDateTimeBehavior" value="convertToNull" />
-        <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
-        <property name="yearIsDateType" value="false" />
-      </driver-properties>
-    </data-source>
     <data-source source="LOCAL" name="bd_clinicav2@localhost" uuid="c55f9259-6035-4df8-aa2b-6212add6cdb1">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
@@ -45,7 +31,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/bd_bances</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="bd_segurityd@localhost" uuid="72cd89fd-f52e-4bec-848a-163b382cf0a1">
+    <data-source source="LOCAL" name="bd_segurity@localhost" uuid="72cd89fd-f52e-4bec-848a-163b382cf0a1">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

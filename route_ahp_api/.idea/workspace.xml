@@ -13,6 +13,11 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="bd_segurity/72cd89fd-f52e-4bec-848a-163b382cf0a1:DATABASE" value="Green" />
+    </colors>
+  </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -24,7 +29,57 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="bd_segurity: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="bd_segurity: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="bd_segurity: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="bd_segurity: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="bd_segurity@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="bd_segurity: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="colegio: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -106,21 +161,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL&#10;MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../route_ahp_web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/webservice" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webservice" />
       <recent name="C:\xampp7\htdocs\clinica_api\webservice" />
       <recent name="C:\xampp7\htdocs\clinica_api\imagenes" />
       <recent name="C:\xampp7\htdocs\clinica_api" />
       <recent name="C:\xampp7\htdocs\clinica_api\model" />
-      <recent name="C:\xampp7\htdocs\app_pjoanfern\Controlador" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webservice" />
     </key>
   </component>
   <component name="RunManager">
@@ -133,6 +188,29 @@
       <envs />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.013910355" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@6f4a7c00" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -301,7 +379,10 @@
       <workItem from="1580054517860" duration="1346000" />
       <workItem from="1580057427047" duration="51000" />
       <workItem from="1582417662221" duration="1183000" />
-      <workItem from="1582418985420" duration="1102000" />
+      <workItem from="1582418985420" duration="1321000" />
+      <workItem from="1582429786465" duration="6697000" />
+      <workItem from="1582468767728" duration="4491000" />
+      <workItem from="1582499714381" duration="13737000" />
     </task>
     <servers />
   </component>
@@ -309,17 +390,53 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="278" y="30" width="806" height="674" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582418086783">
+    <state x="278" y="30" width="806" height="674" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582499774501">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="278" y="30" width="806" height="674" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1582418086783" />
-    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl" timestamp="1582419003056">
+    <state x="278" y="30" width="806" height="674" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1582499774501" />
+    <state x="476" y="88" width="410" height="559" key="#com.intellij.ide.util.MemberChooser" timestamp="1582522447420">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.735@0.0.1366.735" timestamp="1582419003056" />
-    <state x="378" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1582418985414">
+    <state x="476" y="88" width="410" height="559" key="#com.intellij.ide.util.MemberChooser/0.0.1366.735@0.0.1366.735" timestamp="1582522447420" />
+    <state x="366" y="177" width="630" height="381" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1582484673609">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="378" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.735@0.0.1366.735" timestamp="1582418985414" />
+    <state x="366" y="177" width="630" height="381" key="DUMP_DIALOG_DIMENSION_KEY/0.0.1366.735@0.0.1366.735" timestamp="1582484673609" />
+    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl" timestamp="1582484664466">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.735@0.0.1366.735" timestamp="1582484664466" />
+    <state width="1276" height="131" key="GridCell.Tab.0.bottom" timestamp="1582520606206">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state width="1276" height="131" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1582520606206" />
+    <state width="1276" height="131" key="GridCell.Tab.0.center" timestamp="1582520606203">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state width="1276" height="131" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1582520606203" />
+    <state width="1276" height="131" key="GridCell.Tab.0.left" timestamp="1582520606201">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state width="1276" height="131" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1582520606201" />
+    <state width="1276" height="131" key="GridCell.Tab.0.right" timestamp="1582520606204">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state width="1276" height="131" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1582520606204" />
+    <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog" timestamp="1582521383009">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog/0.0.1366.735@0.0.1366.735" timestamp="1582521383009" />
+    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog" timestamp="1582525798183">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1582525798183" />
+    <state x="187" y="4" key="SettingsEditor" timestamp="1582499731389">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="187" y="4" key="SettingsEditor/0.0.1366.735@0.0.1366.735" timestamp="1582499731389" />
+    <state x="378" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1582468778713">
+      <screen x="0" y="0" width="1366" height="735" />
+    </state>
+    <state x="378" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.735@0.0.1366.735" timestamp="1582468778713" />
   </component>
 </project>

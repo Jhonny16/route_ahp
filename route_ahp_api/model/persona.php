@@ -346,6 +346,53 @@ class persona extends conexion
         }
     }
 
+    public function choferes_list()
+    {
+
+        try {
+            $sql = "select *, (case when estado ='A' then 'Activo' else 'No Activo' end) 
+                    from persona where rol_id = 3 and (case when :p_empresa_id = 0 then TRUE else empresa_id = :p_empresa_id end)";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_empresa_id", $this->empresa);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
+    public function apoderados_list()
+    {
+
+        try {
+            $sql = "select *, (case when estado ='A' then 'Activo' else 'No Activo' end) as estado
+                    from persona where (case when :p_id = 0 then TRUE else id = :p_id end) and rol_id=4";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+    public function alumnos_list()
+    {
+
+        try {
+            $sql = "select *, (case when estado ='A' then 'Activo' else 'No Activo' end) 
+                    from persona where rol_id = 5 and (case when :p_apoderado_id = 0 then TRUE else apoderado_id = :p_apoderado_id end)";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_apoderado_id", $this->apoderado_id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
 
     public function update_perfil($cambio)
     {

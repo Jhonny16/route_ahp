@@ -33,25 +33,25 @@
       <Owner>postgres</Owner>
       <IntrospectionStateNumber>174616</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|267246|267243|1
+      <Relations>sequence|table|267162|267157|1
+sequence|table|267230|267224|1
+sequence|table|267155|267151|1
+sequence|table|267196|267192|1
+sequence|table|267222|267218|1
+sequence|table|267241|267237|1
+sequence|table|267170|267164|1
+sequence|table|267246|267243|1
+sequence|table|267235|267232|1
 sequence|table|267183|267180|1
 sequence|table|267190|267187|1
 sequence|table|267201|267198|1
 sequence|table|267206|267203|1
 sequence|table|267211|267208|1
 sequence|table|267216|267213|1
-sequence|table|267235|267232|1
-sequence|table|267196|267192|1
-sequence|table|267222|267218|1
-sequence|table|267241|267237|1
-sequence|table|267230|267224|1
-sequence|table|267185|267172|1
-sequence|table|267170|267164|1
-sequence|table|267162|267157|1
-sequence|table|267155|267151|1
 sequence|table|267136|267133|1
 sequence|table|267141|267138|1
 sequence|table|267146|267143|1
+sequence|table|267185|267172|1
 </Relations>
     </database>
     <database id="9" parent="1" name="bd_clinica">
