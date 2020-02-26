@@ -30,7 +30,7 @@ try {
         $nueva_matriz[$i]['criterio4'] = $norma[$i]['criterio4'] * $criterios[3]['valor'];
 
         $m_final[$i]['persona_id'] = $nueva_matriz[$i]['persona_id'];
-        $m_final[$i]['reciclador'] = $norma[$i]['reciclador'];
+        $m_final[$i]['empresa'] = $norma[$i]['empresa'];
         $m_final[$i]['value'] = round((($nueva_matriz[$i]['criterio1'] +
                 $nueva_matriz[$i]['criterio2'] +
                 $nueva_matriz[$i]['criterio3'] +

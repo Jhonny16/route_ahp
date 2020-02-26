@@ -15,35 +15,18 @@ if (!isset($_SERVER["HTTP_TOKEN"])) {
 
 try {
     $obj = new persona_criterio();
-    $resultado = $obj->c_tiempo_atencion();
+    $resultado = $obj->c_calidad_servicio();
 
     if($resultado){
         $suma = 0;
-        $menor = 0;
-
-        $menor = $resultado[0]['bono'];
         for($i=0; $i<count($resultado); $i++){
-            $suma = $suma + abs($resultado[$i]['bono']);
-
-            if($resultado[$i]['bono'] < $menor){
-                $menor = $resultado[$i]['bono'];
-            }
-        }
-
-        $suma_intervalo = 0;
-        for($i=0; $i<count($resultado); $i++){
-
-            $resultado[$i]['intervalo'] = abs($resultado[$i]['bono'] + abs($menor));
-
-            $suma_intervalo = $suma_intervalo + $resultado[$i]['intervalo'];
+            $suma = $suma + $resultado[$i]['calificacion'];
         }
 
         for($i=0; $i<count($resultado); $i++){
-            $resultado[$i]['valor'] =  round( $resultado[$i]['intervalo']/$suma_intervalo  ,3);
-
+            $resultado[$i]['valor'] =  round( $resultado[$i]['calificacion']/ $suma  ,3);
             $obj->create_update($resultado[$i]['id'], 1, $resultado[$i]['valor']);
         }
-
 
         Funciones::imprimeJSON(200, "",$resultado);
     }

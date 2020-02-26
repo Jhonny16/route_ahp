@@ -16,16 +16,16 @@ if (!isset($_SERVER["HTTP_TOKEN"])) {
 
 try {
     $obj = new persona_criterio();
-    $resultado = $obj->c_antiguedad();
+    $resultado = $obj->c_precio();
 
     if($resultado){
         $suma = 0;
         for($i=0; $i<count($resultado); $i++){
-            $suma = $suma + $resultado[$i]['antiguedad'];
+            $suma = $suma + $resultado[$i]['precio'];
         }
 
         for($i=0; $i<count($resultado); $i++){
-            $resultado[$i]['valor'] =  round( $resultado[$i]['antiguedad']/ $suma  ,3);
+            $resultado[$i]['valor'] =  round( $resultado[$i]['precio']/ $suma  ,3);
             $obj->create_update($resultado[$i]['id'], 2, $resultado[$i]['valor']);
         }
 

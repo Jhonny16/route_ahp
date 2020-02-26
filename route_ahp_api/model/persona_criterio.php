@@ -5,16 +5,15 @@ require_once '../datos/conexion.php';
 class persona_criterio extends conexion
 {
 
-    public function c_tiempo_atencion(){
+    public function c_calidad_servicio(){
 
         try{
 
-            $sql = "select p.id, (p.ap_paterno ||' '|| p.ap_materno ||' '|| p.nombres) as reciclador,
-                           SUM(s.tiempo_aprox_atencion -
-                           ( ((extract(hours from (hora_llegada)-(hora_respuesta))):: integer) * 60
-                             + (extract(minutes from (hora_llegada)-(hora_respuesta)))::integer))  as bono
-                    from servicio s inner join persona p on s.reciclador_id = p.id
-                    group by p.id,p.ap_paterno ||' '|| p.ap_materno ||'' || p.nombres; ";
+            $sql = "select p.id, p.nombre_completo as empresa, (case when SUM(s.calificacion) > 0 then SUM(s.calificacion) else 0 end)  as calificacion
+                    from persona p left join servicio s on p.id = s.empresa_id
+                    where rol_id = 2
+                    group by p.id, p.nombre_completo
+                    ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -25,14 +24,13 @@ class persona_criterio extends conexion
             throw $ex;
         }
     }
-    public function c_antiguedad(){
+    public function c_precio(){
 
         try{
 
-            $sql = "select p.id, (p.ap_paterno ||' '|| p.ap_materno ||' '|| p.nombres) as reciclador,
-                          current_date - p.fecha_registro as antiguedad
-                    from servicio s inner join persona p on s.reciclador_id = p.id
-                    group by p.id,p.ap_paterno ||' '|| p.ap_materno ||'' || p.nombres; ";
+            $sql = "select p.id, p.nombre_completo as empresa, SUM(p2.costo) as precio
+                        from persona p inner join precio p2 on p.id = p2.empresa_id
+                        group by p.id, p.nombre_completo; ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -44,14 +42,24 @@ class persona_criterio extends conexion
         }
     }
 
-    public function c_calificacion(){
+    public function c_puntualidad(){
 
         try{
 
-            $sql = "select p.id, (p.ap_paterno ||' '|| p.ap_materno ||' '|| p.nombres) as reciclador,
-                          SUM(s.calificacion) as calificacion
-                    from servicio s inner join persona p on s.reciclador_id = p.id
-                    group by p.id,p.ap_paterno ||' '|| p.ap_materno ||'' || p.nombres;
+            $sql = "select p.id, p.nombre_completo as empresa,
+                               (case when SUM(extract(minutes from (r.hora_entrada - rs.hora_llegada)) +
+                                              extract(minutes from (r.hora_salida - rs.hora_salida)))
+                                   is null then 0 else
+                                   SUM(extract(minutes from (r.hora_entrada - rs.hora_llegada)) +
+                                       extract(minutes from (r.hora_salida - rs.hora_salida)))
+                                   end) as acumulado
+                        from persona p left outer join servicio se on p.id = se.empresa_id
+                        left join servicio_detalle sd on se.id = sd.servicio_id
+                        left join referencia_alumno r on r.id = sd.referencia_id
+                        left join ruta_servicio rs on sd.id = rs.servicio_detalle_id
+                        where rol_id= 2
+                        group by  p.id, p.nombre_completo;
+
                      ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
@@ -132,13 +140,13 @@ class persona_criterio extends conexion
 
         try {
             $sql = "select pc.persona_id,
-                           (p.ap_paterno||' '|| p.ap_materno ||' '|| p.nombres) as reciclador,
+                           p.nombre_completo as empresa,
                       SUM(case when pc.criterio_id=1 then pc.valor end) as criterio1,
                       SUM(case when pc.criterio_id=2 then pc.valor end) as criterio2,
                       SUM(case when pc.criterio_id=3 then pc.valor end) as criterio3,
                       SUM(case when pc.criterio_id=4 then pc.valor end) as criterio4
                     from persona_criterio pc inner join persona p on pc.persona_id = p.id
-                    group by persona_id,p.ap_paterno||' '|| p.ap_materno ||' '|| p.nombres
+                    group by persona_id,p.nombre_completo
                     order by persona_id asc;";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
