@@ -335,9 +335,27 @@ class persona extends conexion
     {
 
         try {
-            $sql = "select *, (case when estado ='A' then 'Activo' else 'No Activo' end) 
+            $sql = "select *, (case when estado ='A' then 'Activo' else 'No Activo' end) ,
+                    (valor * 100) as porcentaje
                     from persona where rol_id = 2";
             $sentencia = $this->dblink->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
+    public function empresas_list_por_colegio($colegio_id)
+    {
+
+        try {
+            $sql = "select p.id, p.nombre_completo as empresa from
+                    persona p inner join  precio p2 on p.id = p2.empresa_id inner join colegio c on p2.colegio_id = c.id
+                    where p.rol_id = 2 and p2.colegio_id = :p_colegio_id ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_colegio_id", $colegio_id);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;

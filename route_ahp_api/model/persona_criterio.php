@@ -57,7 +57,7 @@ class persona_criterio extends conexion
                         left join servicio_detalle sd on se.id = sd.servicio_id
                         left join referencia_alumno r on r.id = sd.referencia_id
                         left join ruta_servicio rs on sd.id = rs.servicio_detalle_id
-                        where rol_id= 2
+                        where rol_id= 2 and rs.estado = 'F'
                         group by  p.id, p.nombre_completo;
 
                      ";

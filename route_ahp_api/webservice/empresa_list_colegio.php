@@ -1,6 +1,6 @@
 <?php
 
-require_once '../model/precio.php';
+require_once '../model/persona.php';
 require_once '../util/funciones/Funciones.clase.php';
 require_once 'tokenvalidar.php';
 
@@ -9,15 +9,12 @@ if (!isset($_SERVER["HTTP_TOKEN"])) {
     exit();
 }
 
-$empresa_id = json_decode(file_get_contents("php://input"))->empresa_id;
 $colegio_id = json_decode(file_get_contents("php://input"))->colegio_id;
 
-try {
-    $obj = new precio();
-    $obj->setEmpresaId($empresa_id);
-    $obj->setColegioId($colegio_id);
-    $resultado = $obj->lista();
 
+try {
+    $obj = new persona();
+    $resultado = $obj->empresas_list_por_colegio($colegio_id);
     if($resultado){
         Funciones::imprimeJSON(200, "",$resultado);
     }

@@ -1,6 +1,6 @@
 <?php
 
-require_once '../model/precio.php';
+require_once '../model/servicio.php';
 require_once '../util/funciones/Funciones.clase.php';
 require_once 'tokenvalidar.php';
 
@@ -9,20 +9,20 @@ if (!isset($_SERVER["HTTP_TOKEN"])) {
     exit();
 }
 
-$empresa_id = json_decode(file_get_contents("php://input"))->empresa_id;
-$colegio_id = json_decode(file_get_contents("php://input"))->colegio_id;
+$apoderado_id = json_decode(file_get_contents("php://input"))->apoderado_id;
 
 try {
-    $obj = new precio();
-    $obj->setEmpresaId($empresa_id);
-    $obj->setColegioId($colegio_id);
-    $resultado = $obj->lista();
+    $obj = new servicio();
+    $resultado = $obj->servicio_detalle_aceptacion($apoderado_id);
 
     if($resultado){
         Funciones::imprimeJSON(200, "",$resultado);
+    }else{
+        Funciones::imprimeJSON(203, "No hay datos","");
     }
 
 } catch (Exception $exc) {
 
     Funciones::imprimeJSON(500, $exc->getMessage(), "");
 }
+

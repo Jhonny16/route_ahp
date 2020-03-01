@@ -8,7 +8,42 @@ class colegio extends conexion
     private $numero;
     private $nombre;
     private $direccion;
+    private $latitud;
+    private $longitud;
     private $director;
+
+    /**
+     * @return mixed
+     */
+    public function getLatitud()
+    {
+        return $this->latitud;
+    }
+
+    /**
+     * @param mixed $latitud
+     */
+    public function setLatitud($latitud)
+    {
+        $this->latitud = $latitud;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLongitud()
+    {
+        return $this->longitud;
+    }
+
+    /**
+     * @param mixed $longitud
+     */
+    public function setLongitud($longitud)
+    {
+        $this->longitud = $longitud;
+    }
+
 
     /**
      * @return mixed
@@ -103,6 +138,33 @@ class colegio extends conexion
         } catch (Exception $ex) {
             throw $ex;
         }
+    }
+
+    public function create()
+    {
+
+        try {
+
+
+            $sql = "insert into colegio (numero, nombre, direccion, latitud, longitud, director_nombre)
+                    values (:p_numero,:p_nombre,:p_direccion,:p_latitud,:p_longitud,:p_director_nombre); ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_numero", $this->numero);
+            $sentencia->bindParam(":p_nombre", $this->nombre);
+            $sentencia->bindParam(":p_direccion", $this->direccion);
+            $sentencia->bindParam(":p_latitud", $this->latitud);
+            $sentencia->bindParam(":p_longitud", $this->longitud);
+            $sentencia->bindParam(":p_director_nombre", $this->director);
+
+            $sentencia->execute();
+            return True;
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
+        }
+
     }
 
 
