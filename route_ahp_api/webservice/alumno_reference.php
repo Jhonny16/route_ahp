@@ -17,6 +17,10 @@ $hora_entrada = json_decode(file_get_contents("php://input"))->hora_entrada;
 $hora_salida = json_decode(file_get_contents("php://input"))->hora_salida;
 $persona_id = json_decode(file_get_contents("php://input"))->persona_id;
 $colegio_id = json_decode(file_get_contents("php://input"))->colegio_id;
+$empresa_id = json_decode(file_get_contents("php://input"))->empresa_id;
+$fecha_inicio = json_decode(file_get_contents("php://input"))->fecha_inicio;
+$fecha_fin = json_decode(file_get_contents("php://input"))->fecha_fin;
+
 
 
 try {
@@ -31,7 +35,7 @@ try {
     $objper->setPersonaId($persona_id);
     $objper->setColegioId($colegio_id);
 
-    $result = $objper->create();
+    $result = $objper->create($empresa_id, $fecha_inicio, $fecha_fin);
     if ($result) {
         Funciones::imprimeJSON(200, "Agregado Correcto", $result);
     } else {

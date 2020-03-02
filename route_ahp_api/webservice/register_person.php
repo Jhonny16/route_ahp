@@ -25,22 +25,28 @@ $rol_id = json_decode(file_get_contents("php://input"))->rol_id;
 
 
 try {
-
-
     date_default_timezone_set("America/Lima");
     $fecha_registro = date('Y-m-d');
 
-    if (strlen($documento_identidad) == 8) {
-        $datetime1 = new DateTime($fn);
-        $datetime2 = new DateTime($fecha_registro);
-        $interval = $datetime1->diff($datetime2);
-        $dias = $interval->format('%R%a');
-        $anio = (float)$dias / 365;
-        if ($anio < 18) {
-            Funciones::imprimeJSON(500, "La fecha de nacimiento del nuevo registro no supera los 18 años", "");
-            exit();
+    if ($rol_id != 5){
+
+        if (strlen($documento_identidad) == 8) {
+            $datetime1 = new DateTime($fn);
+            $datetime2 = new DateTime($fecha_registro);
+            $interval = $datetime1->diff($datetime2);
+            $dias = $interval->format('%R%a');
+            $anio = (float)$dias / 365;
+            if ($anio < 18) {
+                Funciones::imprimeJSON(500, "La fecha de nacimiento del nuevo registro no supera los 18 años", "");
+                exit();
+            }
         }
     }
+
+    if ($rol_id == 5){
+        $es_usuario = true;
+    }
+
 
 
     if ($operation == 'Nuevo') {

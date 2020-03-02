@@ -125,7 +125,7 @@ class referencia  extends conexion
     }
 
 
-    public function create()
+    public function create($empresa_id, $fecha_inicio, $fecha_fin)
     {
 
         try {
@@ -143,6 +143,23 @@ class referencia  extends conexion
             $sentencia->bindParam(":p_colegio_id", $this->colegio_id);
 
             $sentencia->execute();
+
+            $sql = "select id from referencia_alumno order by id desc limit 1 ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+            if ($sentencia->rowCount()) {
+                $referencia_id = $resultado['id'];
+
+                $res = $this->create_servicio($empresa_id, $fecha_inicio, $fecha_fin, $referencia_id);
+                if($res){
+                    return $resultado;
+                }
+                else{
+                    return $resultado;
+                }
+            }
+
             return True;
 
         } catch (Exception $ex) {
@@ -151,5 +168,103 @@ class referencia  extends conexion
 
         }
 
+    }
+
+    public function create_servicio($empresa_id, $fecha_inicio, $fecha_fin, $referencia_id){
+        try {
+
+            $sql = "select secuencia from correlativo where tabla = 'servicio' ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch();
+
+            $secuencia = $resultado["secuencia"];
+            $secuencia = $secuencia + 1;
+            if (strlen($secuencia) == 1) {
+                $pad = 5;
+            } else {
+                if (strlen($secuencia) == 2) {
+                    $pad = 4;
+                } else {
+                    if (strlen($secuencia) == 3) {
+                        $pad = 3;
+                    } else {
+                        if (strlen($secuencia) == 4) {
+                            $pad = 2;
+                        } else {
+                            if (strlen($secuencia) == 5) {
+                                $pad = 1;
+                            }
+                        }
+                    }
+                }
+            }
+            $correlativo = str_pad($secuencia, $pad, "0", STR_PAD_LEFT);
+            $numeracion = "SRV-" . $correlativo;
+            $code = $numeracion ;
+            date_default_timezone_set("America/Lima");
+            $fecha = date('Y-m-d');
+
+            $sql = "insert into servicio (fecha_registro, empresa_id, code, fecha_inicio, fecha_fin) VALUES 
+                    (:p_fecha_registro,:p_empresa_id, :p_code, :p_fecha_inicio, :p_fecha_fin); ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_fecha_registro", $fecha);
+            $sentencia->bindParam(":p_empresa_id", $empresa_id);
+            $sentencia->bindParam(":p_code", $code);
+            $sentencia->bindParam(":p_fecha_inicio", $fecha_inicio);
+            $sentencia->bindParam(":p_fecha_fin", $fecha_fin);
+            $sentencia->execute();
+
+
+            $this->dblink->beginTransaction();
+            $sql = "update correlativo set secuencia = :p_secuencia where tabla = 'servicio' ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_secuencia", $secuencia);
+            $sentencia->execute();
+            $this->dblink->commit();
+
+
+            $sql = "select id from servicio order by id desc limit 1 ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+            if ($sentencia->rowCount()) {
+                $servicio_id = $resultado['id'];
+
+                $res = $this->create_servicio_detalle($servicio_id, $referencia_id);
+                if($res){
+                    return $resultado;
+                }
+                else{
+                    return $resultado;
+                }
+            }
+
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
+        }
+    }
+
+    public function create_servicio_detalle($servicio_id, $referencia_id){
+        try {
+
+
+            $sql = "insert into servicio_detalle (servicio_id, referencia_id) VALUES
+                    (:p_servicio_id, :p_referencia_id); ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_servicio_id", $servicio_id);
+            $sentencia->bindParam(":p_referencia_id", $referencia_id);
+            $sentencia->execute();
+            return True;
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
+        }
     }
 }

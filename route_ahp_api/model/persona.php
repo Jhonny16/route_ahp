@@ -255,7 +255,7 @@ class persona extends conexion
 
 
             $sql = "insert into persona (nombre_completo, documento_identidad, fecha_registro, celular,
-              direccion, estado, fecha_nacimiento, sexo, apoderado_id, usuario, rol_id, empresa_id)
+                    direccion, estado, fecha_nacimiento, sexo, apoderado_id, usuario, rol_id, empresa_id)
                     values (:p_nombre_completo, :p_documento ,:p_fecha_registro, :p_celular, :p_direccion,
                      :p_estado, :p_fecha_nacimiento, :p_sexo,
                     :p_apoderado_id,:p_usuario,:p_rol, :p_empresa); ";
@@ -395,14 +395,20 @@ class persona extends conexion
             throw $ex;
         }
     }
-    public function alumnos_list()
+    public function vehiculos_por_chofer($chofer_id)
     {
 
         try {
-            $sql = "select *, (case when estado ='A' then 'Activo' else 'No Activo' end) 
-                    from persona where rol_id = 5 and (case when :p_apoderado_id = 0 then TRUE else apoderado_id = :p_apoderado_id end)";
+            $sql = "select
+                        p.nombre_completo as chofer,
+                        v.marca, v.placa,v.color,
+                           cv.fecha_inicio, cv.fecha_fin,
+                           v.activo as vehiculo_activo
+                    from vehiculo v inner join conductor_vehiculo cv on v.id = cv.vehiculo_id
+                    inner join persona p on cv.persona_id = p.id
+                    where p.id = :p_chofer_id  ";
             $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_apoderado_id", $this->apoderado_id);
+            $sentencia->bindParam(":p_chofer_id", $chofer_id);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;
@@ -410,6 +416,24 @@ class persona extends conexion
             throw $ex;
         }
     }
+
+        public function alumnos_list()
+        {
+
+            try {
+                $sql = "select *, (case when estado ='A' then 'Activo' else 'No Activo' end) 
+                    from persona where rol_id = 5 and (case when :p_apoderado_id = 0 then TRUE else apoderado_id = :p_apoderado_id end)";
+                $sentencia = $this->dblink->prepare($sql);
+                $sentencia->bindParam(":p_apoderado_id", $this->apoderado_id);
+                $sentencia->execute();
+                $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+                return $resultado;
+            } catch (Exception $ex) {
+                throw $ex;
+            }
+        }
+
+
 
 
     public function update_perfil($cambio)

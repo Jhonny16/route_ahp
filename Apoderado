@@ -1,0 +1,153 @@
+Apoderado:
+* Roles: 2(empresa), 3(chofer), 4(Apoderado), 5(Alumno)
+* Menu:
+    * REGISTRO (Antes del logueo - punto 1)
+    * LOGUEO (punto 2)
+    * MENU
+        * Perfil (punto 9)
+        * Lista de empresas priorizadas (en dos semanas de agregaran dos columnas solo para informacion) (punto 3)
+        * Lista de precios (punto 4)
+        * Registro de hijo(s) (punto 5)
+        * servicio:
+            - solicitud // creacion de referencia (punto 6)
+            - Seguimiento (punto  7 y punto 8)
+            - Historial // (sale del punto 7)
+        * reporte (punto 10)
+
+1) Para el registro del apoderado. Tomar en cuenta que luego del registro, debe mostrar una interfaz donde se pueda loguear.
+    ruta: ../route_ahp_api/webservice/register_person.php
+    parametros: 
+         {	
+	        "operation":"Nuevo",
+	        "nombre_completo": "Varillas Guerrero Ana",
+	        "documento_identidad": "16454545",
+	        "celular": "97844410",
+	        "direccion": "Jirón Francisco de Zela 1676, Lince 15073",
+	        "estado": "A",
+	        "fecha_nacimiento": "2010-12-12",
+	        "apoderado_id":0, //en este caso es cero porque la empresa no tiene apoderado
+	        "empresa_id": 0, //es cero no porque no es empresa
+	        "sexo": "F",
+	        "es_usuario": true,
+	        "rol_id": 4 //Rol de apoderado
+	        
+        }
+2. Para el logueo.
+    ruta: webservice/uservalidar.php
+    parametros: //se loguea con el documento de registro y la clave por defecto es 123 hasta que entre a perfiles y cambie su contraseña
+        {
+	        "p_dni": "16454545",
+	        "p_clave": "123"
+        }
+3. Lista de empresas. Mostrará la lista de empresas, ordenar por campo porcentaje de mayor a menor.
+    ruta: localhost/www/route_ahp_api/webservice/empresas_list.php
+    parametros: token en el headers
+
+4. Lista de precios filtrado por empresa y/o por colegio
+    //Combo de empresas : ruta: /webservice/empresas_list.php
+    //Combo de colegios: ruta: /webservice/colegio_list.php
+    // si enviamos 0 "cero" filtra por todos tanto como para colegio como para empresa
+    ruta: /webservice/precios_list.php
+    
+    parametros:
+    {
+	    "empresa_id": 2, id de empresa
+	    "colegio": 1 id de colegipos
+    }
+
+
+5. Registro de hijo(s):
+    ruta: ../route_ahp_api/webservice/register_person.php
+    parametros: 
+         {	
+	        "operation":"Nuevo",
+	        "nombre_completo": "dadadsds",
+	        "documento_identidad": "15511515",
+	        "celular": "97844410",
+	        "direccion": "Jirón Francisco de Zela 1676, Lince 15073", //direccion del apoderado
+	        "estado": "A",
+	        "fecha_nacimiento": "2010-12-12", //fecha nacimiento del alumno
+	        "apoderado_id": , //Aquí va el id del apoderado
+	        "empresa_id": 0, //es cero no porque no es empresa
+	        "sexo": "F",
+	        "es_usuario": false,
+	        "rol_id": 5 //Rol de alumno
+	        
+        }
+ 6. Solicitud del servicio:
+    a) Para ello se necesita ingresar datos referenciales del alumno.
+             {	
+	        "turno": //El turno será un desplegable (Mañana o tarde ), el grado (desplegable de 1ro a 6to ), la seccion (desplegable de la A a la Z).,
+	        "grado": //Lista desplegable  1ro a 6to
+	        "seccion":  //Lista desplegable de A a Z
+	        "hora_entrada": //la hora de entrada y salida tipo time
+	        "hora_salida": //la hora de entrada y salida tipo time
+	        "persona_id": es el alumno, colegio_id//colegio al cual pertenece el alumno(debe mostrarse lista desplegable de todos los colegios que hay, caso contrario registrar el colegio con direccion exacta).
+	        "colegio_id":  //lista de todos los colegios
+            "empresa_id": //deberá cargar de acuerdo al colegio selecccionado, es decir cargo selecciono el colegio y me debe cargar la lista de empresas que brindan servicio para ese colegio.
+            "fecha_inicio": //fecha de inicio del servicio
+            "fecha_fin": //fecha de fin del servicio
+        }
+    b) ruta para cargar las empresas de acuerdo al colegio:
+                ../route_ahp_api/webservice/empresa_list_colegio.php
+       parametros : {
+	                "colegio_id": 1
+                    }
+    c)ruta general: webservice/alumno_reference.php
+     
+
+
+7. Revision de la Aceptacion del servicio (Aceptada por la empresa):
+      
+     a) Al crear esta referencia la empresa (via web) aceptara o no el servicio, si acepta el servicio, entonces el padre de familia podrá ver si aceptaron o no el servicio
+        ruta: webservice/servicio_aceptacion.php
+        parametros:
+            {
+	            "apoderado_id": 5 //id del apoderado
+            }
+        
+     NOTA Número 1:En los resultados mostrará toda la lista que devuelve la peticion, adicionalemnte se verá una columna donde diga ver rutas. 
+          Si la peticion es "no aceptada y vigente" entonces debe mostrar el boton (ver ruta), de lo contrario no se mostrará el boton.
+     NOTA Número 2: si es "aceptada y no vigente" allí mostrará un botom que mande un modal o quiza mandará a otra vista donde se verá el historial de rutas.
+                      ruta: webservice/servicio_ruta_historial.php
+                      parametros:
+                            {
+	                        "servicio_detalle_id": 3, //el id del servicio detalle se obtiene de este punto
+                            "fecha": "2020-03-12" //se enviara cualquier fecha a modo de filtro
+                            }
+     NOTA Número 3: si es "no aceptada" no aparece ningun boton, solo un guion "-"
+                  
+                    
+ 
+8) Vista de ruta: (Vista mapa)
+    a) como el punto 7 mostrará una columna adicional(ver ruta) lo que hará es ver por donde esta ubicado el vehículo,
+    para ello el api a modo de ejemplo deberá poder consular cada 5 segundos la ubicación
+    
+    ruta: webservice/servicio_ruta.php
+    parametros:
+        {
+	    "servicio_detalle_id": 3, //el id del servicio detalle se obtiene del punto 7
+        "fecha": "2020-03-12" //se enviara la fecha de hoy
+        }
+        
+
+
+9) Edicion del perfil del usuario incluida contraseña
+    
+10) 2 Reportes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
