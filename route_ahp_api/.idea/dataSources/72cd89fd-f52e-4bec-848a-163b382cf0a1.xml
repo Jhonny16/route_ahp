@@ -3,12 +3,12 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.17">
     <root id="1">
       <ServerVersion>10.10</ServerVersion>
-      <StartupTime>1583100080</StartupTime>
+      <StartupTime>1583157365</StartupTime>
     </root>
     <database id="2" parent="1" name="bd_segurity">
       <ObjectId>30208</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>26527</IntrospectionStateNumber>
+      <IntrospectionStateNumber>26562</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|30212|30209|1
 sequence|table|30217|30214|1
@@ -86,7 +86,7 @@ sequence|table|32290|32292|1
       <Comment>standard public schema</Comment>
       <StateNumber>351</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>26528</IntrospectionStateNumber>
+      <IntrospectionStateNumber>26563</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="16" parent="2" name="btree">
@@ -279,7 +279,7 @@ sequence|table|32290|32292|1
     <table id="42" parent="15" name="referencia_alumno">
       <ObjectId>30241</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>23301</StateNumber>
+      <StateNumber>26547</StateNumber>
     </table>
     <table id="43" parent="15" name="rol">
       <ObjectId>30246</ObjectId>
@@ -299,7 +299,7 @@ sequence|table|32290|32292|1
     <table id="46" parent="15" name="servicio_detalle">
       <ObjectId>32292</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>26501</StateNumber>
+      <StateNumber>26555</StateNumber>
     </table>
     <table id="47" parent="15" name="vehiculo">
       <ObjectId>30266</ObjectId>
@@ -810,21 +810,39 @@ sequence|table|32290|32292|1
       <StateNumber>23301</StateNumber>
       <TypeId>1083</TypeId>
     </column>
-    <index id="119" parent="42" name="referencia_alumno_pkey">
+    <column id="119" parent="42" name="fecha_inicio">
+      <Position>11</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>26547</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="120" parent="42" name="fecha_fin">
+      <Position>12</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>26547</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="121" parent="42" name="aceptacion">
+      <Position>13</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>26547</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="122" parent="42" name="referencia_alumno_pkey">
       <ObjectId>30294</ObjectId>
       <StateNumber>23301</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="120" parent="42" name="referencia_alumno_pkey">
+    <key id="123" parent="42" name="referencia_alumno_pkey">
       <ObjectId>30295</ObjectId>
       <StateNumber>12191</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>referencia_alumno_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="121" parent="42" name="fk_alumno_referencia">
+    <foreign-key id="124" parent="42" name="fk_alumno_referencia">
       <ObjectId>30304</ObjectId>
       <StateNumber>12196</StateNumber>
       <ColNames>persona_id</ColNames>
@@ -834,7 +852,7 @@ sequence|table|32290|32292|1
       <RefKeyName>persona_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="122" parent="42" name="fk_persona_colegio">
+    <foreign-key id="125" parent="42" name="fk_persona_colegio">
       <ObjectId>30334</ObjectId>
       <StateNumber>12202</StateNumber>
       <ColNames>colegio_id</ColNames>
@@ -844,7 +862,7 @@ sequence|table|32290|32292|1
       <RefKeyName>colegio_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="123" parent="43" name="id">
+    <column id="126" parent="43" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -852,28 +870,28 @@ sequence|table|32290|32292|1
       <DefaultExpression>nextval(&apos;public.rol_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="124" parent="43" name="nombre">
+    <column id="127" parent="43" name="nombre">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>12141</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="125" parent="43" name="rol_pkey">
+    <index id="128" parent="43" name="rol_pkey">
       <ObjectId>30296</ObjectId>
       <StateNumber>12192</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="126" parent="43" name="rol_pkey">
+    <key id="129" parent="43" name="rol_pkey">
       <ObjectId>30297</ObjectId>
       <StateNumber>12192</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>rol_pkey</UnderlyingIndexName>
     </key>
-    <column id="127" parent="44" name="id">
+    <column id="130" parent="44" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -881,78 +899,78 @@ sequence|table|32290|32292|1
       <DefaultExpression>nextval(&apos;public.ruta_servicio_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="128" parent="44" name="fecha">
+    <column id="131" parent="44" name="fecha">
       <Position>2</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>12146</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="129" parent="44" name="latitud">
+    <column id="132" parent="44" name="latitud">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>12146</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="130" parent="44" name="longitud">
+    <column id="133" parent="44" name="longitud">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>12146</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="131" parent="44" name="observacion">
+    <column id="134" parent="44" name="observacion">
       <Position>7</Position>
       <DataType>text|0s</DataType>
       <StateNumber>12146</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="132" parent="44" name="coductor_vehiculo_id">
+    <column id="135" parent="44" name="coductor_vehiculo_id">
       <Position>8</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>12146</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="133" parent="44" name="servicio_detalle_id">
+    <column id="136" parent="44" name="servicio_detalle_id">
       <Position>10</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>23030</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="134" parent="44" name="hora_llegada">
+    <column id="137" parent="44" name="hora_llegada">
       <Position>11</Position>
       <DataType>time|0s</DataType>
       <StateNumber>23305</StateNumber>
       <TypeId>1083</TypeId>
     </column>
-    <column id="135" parent="44" name="hora_salida">
+    <column id="138" parent="44" name="hora_salida">
       <Position>12</Position>
       <DataType>time|0s</DataType>
       <StateNumber>23305</StateNumber>
       <TypeId>1083</TypeId>
     </column>
-    <column id="136" parent="44" name="estado">
+    <column id="139" parent="44" name="estado">
       <Position>13</Position>
       <DataType>char|0s</DataType>
       <StateNumber>26505</StateNumber>
       <DefaultExpression>&apos;N&apos;::bpchar</DefaultExpression>
       <TypeId>1042</TypeId>
     </column>
-    <index id="137" parent="44" name="ruta_servicio_pkey">
+    <index id="140" parent="44" name="ruta_servicio_pkey">
       <ObjectId>30298</ObjectId>
       <StateNumber>26505</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="138" parent="44" name="ruta_servicio_pkey">
+    <key id="141" parent="44" name="ruta_servicio_pkey">
       <ObjectId>30299</ObjectId>
       <StateNumber>12193</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>ruta_servicio_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="139" parent="44" name="fk_serv_det_ruta">
+    <foreign-key id="142" parent="44" name="fk_serv_det_ruta">
       <ObjectId>32309</ObjectId>
       <StateNumber>23030</StateNumber>
       <ColNames>servicio_detalle_id</ColNames>
@@ -962,7 +980,7 @@ sequence|table|32290|32292|1
       <RefKeyName>servicio_detalle_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="140" parent="45" name="id">
+    <column id="143" parent="45" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -970,44 +988,25 @@ sequence|table|32290|32292|1
       <DefaultExpression>nextval(&apos;public.servicio_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="141" parent="45" name="fecha_registro">
+    <column id="144" parent="45" name="fecha_registro">
       <Position>2</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>12151</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="142" parent="45" name="empresa_id">
+    <column id="145" parent="45" name="empresa_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>12151</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="143" parent="45" name="code">
+    <column id="146" parent="45" name="code">
       <Position>5</Position>
       <DataType>varchar|0s</DataType>
       <StateNumber>23008</StateNumber>
       <TypeId>1043</TypeId>
-    </column>
-    <column id="144" parent="45" name="calificacion">
-      <Position>6</Position>
-      <DataType>integer|0s</DataType>
-      <StateNumber>23376</StateNumber>
-      <DefaultExpression>0</DefaultExpression>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="145" parent="45" name="fecha_inicio">
-      <Position>7</Position>
-      <DataType>date|0s</DataType>
-      <StateNumber>26517</StateNumber>
-      <TypeId>1082</TypeId>
-    </column>
-    <column id="146" parent="45" name="fecha_fin">
-      <Position>8</Position>
-      <DataType>date|0s</DataType>
-      <StateNumber>26517</StateNumber>
-      <TypeId>1082</TypeId>
     </column>
     <index id="147" parent="45" name="servicio_pkey">
       <ObjectId>30300</ObjectId>
@@ -1055,12 +1054,12 @@ sequence|table|32290|32292|1
       <StateNumber>23014</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="153" parent="46" name="aceptacion">
-      <Position>4</Position>
-      <DataType>boolean|0s</DataType>
-      <StateNumber>26501</StateNumber>
-      <DefaultExpression>false</DefaultExpression>
-      <TypeId>16</TypeId>
+    <column id="153" parent="46" name="calificacion">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>26556</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
     </column>
     <index id="154" parent="46" name="servicio_detalle_pkey">
       <ObjectId>32296</ObjectId>

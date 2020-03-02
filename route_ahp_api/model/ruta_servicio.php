@@ -194,13 +194,21 @@ class ruta_servicio extends conexion
             $sql = "select
                         rs.latitud, rs.longitud, rs.fecha,
                         p.nombre_completo as chofer,
-                       v.placa,
-                       v.marca
-                        from
+                        v.placa,
+                        v.marca,
+                        ra.hora_entrada as hora_entrada,
+                        rs.hora_llegada as hora_llegada_real,
+                        ra.hora_salida as hora_salida,
+                        rs.hora_salida as hora_salida_real,
+                        rs.observacion
+                    
+                    from
                         ruta_servicio rs
                             inner join persona p on rs.coductor_vehiculo_id = p.id
-                        inner join conductor_vehiculo cv on cv.persona_id = p.id
-                        inner join vehiculo v on cv.vehiculo_id = v.id
+                            inner join conductor_vehiculo cv on cv.persona_id = p.id
+                            inner join vehiculo v on cv.vehiculo_id = v.id
+                            inner join servicio_detalle sd on rs.servicio_detalle_id = sd.id
+                            inner join referencia_alumno ra on sd.referencia_id = ra.id
                         where rs.servicio_detalle_id = :p_servicio_detalle_id and rs.fecha = :p_fecha ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_servicio_detalle_id", $this->servicio_detalle_id);

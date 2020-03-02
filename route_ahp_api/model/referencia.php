@@ -147,18 +147,18 @@ class referencia  extends conexion
             $sql = "select id from referencia_alumno order by id desc limit 1 ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
-            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
-            if ($sentencia->rowCount()) {
-                $referencia_id = $resultado['id'];
-
-                $res = $this->create_servicio($empresa_id, $fecha_inicio, $fecha_fin, $referencia_id);
-                if($res){
-                    return $resultado;
-                }
-                else{
-                    return $resultado;
-                }
-            }
+//            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+//            if ($sentencia->rowCount()) {
+//                $referencia_id = $resultado['id'];
+//
+//                $res = $this->create_servicio($empresa_id, $fecha_inicio, $fecha_fin, $referencia_id);
+//                if($res){
+//                    return $resultado;
+//                }
+//                else{
+//                    return $resultado;
+//                }
+//            }
 
             return True;
 
