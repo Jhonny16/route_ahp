@@ -11,8 +11,26 @@ class ruta_servicio extends conexion
     private $observacion;
     private $conductor_vehiuclo_id;
     private $servicio_detalle_id;
-    private $hora_entrada;
+    private $hora_salida;
     private $hora_llegada;
+
+    /**
+     * @return mixed
+     */
+    public function getHoraSalida()
+    {
+        return $this->hora_salida;
+    }
+
+    /**
+     * @param mixed $hora_salida
+     */
+    public function setHoraSalida($hora_salida)
+    {
+        $this->hora_salida = $hora_salida;
+    }
+
+
 
     /**
      * @return mixed
@@ -221,4 +239,150 @@ class ruta_servicio extends conexion
         }
     }
 
+    public function rutas_chofer_hoy($servicio_id, $chofer_id){
+
+        try {
+            $sql = "select
+                        s.code ,
+                        'SERV-D-' || sd.id as code_servicio_detalle,
+                        p.nombre_completo as alumno,
+                        p.direccion as direccion_alumno,
+                        c.direccion as direccion_colegio,
+                        c.latitud as latitud_colegio,
+                        c.longitud as longitud_colegio,
+                        ra.hora_entrada,
+                        ra.hora_salida,
+                        rs.observacion,
+                        rs.estado,
+                        rs.id as ruta_servicio_id
+
+                    
+                    from
+                        servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
+                                   inner join referencia_alumno ra on sd.referencia_id = ra.id
+                                   inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
+                                   inner join persona p on ra.persona_id = p.id
+                                   inner join colegio c on ra.colegio_id = c.id
+                    where s.id = :p_servicio_id and rs.coductor_vehiculo_id = :p_chofer_id and rs.fecha = current_date ; ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_servicio_id", $servicio_id);
+            $sentencia->bindParam(":p_chofer_id", $chofer_id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+
+    }
+
+    public function rutas_chofer_rango_fechas($servicio_id, $chofer_id, $fecha_inicio, $fecha_fin){
+
+        try {
+            $sql = "select
+                        s.code ,
+                        'SERV-D-' || sd.id as code_servicio_detalle,
+                        p.nombre_completo as alumno,
+                        p.direccion as direccion_alumno,
+                        c.direccion as direccion_colegio,
+                        c.latitud as latitud_colegio,
+                        c.longitud as longitud_colegio,
+                        ra.hora_entrada,
+                        rs.hora_llegada as hora_llegada_real
+                        ra.hora_salida,
+                        rs.hora_salida as hora_salida_real
+                        rs.observacion,
+                        rs.estado
+                    
+                    from
+                        servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
+                                   inner join referencia_alumno ra on sd.referencia_id = ra.id
+                                   inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
+                                   inner join persona p on ra.persona_id = p.id
+                                   inner join colegio c on ra.colegio_id = c.id
+                    where s.id = :p_servicio_id and rs.coductor_vehiculo_id = :p_chofer_id 
+                    and  (rs.fecha between :p_fecha_inicio and :p_fecha_fin)";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_servicio_id", $servicio_id);
+            $sentencia->bindParam(":p_chofer_id", $chofer_id);
+            $sentencia->bindParam(":p_fecha_inicio", $fecha_inicio);
+            $sentencia->bindParam(":p_fecha_fin", $fecha_fin);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+
+    }
+
+
+    public function hora_llegada(){
+        try {
+
+
+            $this->dblink->beginTransaction();
+            $sql = "update ruta_servicio set hora_llegada = :p_hora_llegada
+                    where id = :p_id ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_hora_llegada", $this->hora_llegada);
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $this->dblink->commit();
+
+            return true;
+
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
+        }
+    }
+
+    public function hora_salida(){
+        try {
+
+
+            $this->dblink->beginTransaction();
+            $sql = "update ruta_servicio set hora_salida = :p_hora_salida, estado = 'F'
+                    where id = :p_id ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_hora_salida", $this->hora_salida );
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $this->dblink->commit();
+
+            return true;
+
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
+        }
+    }
+
+    public function observacion(){
+        try {
+
+
+            $this->dblink->beginTransaction();
+            $sql = "update ruta_servicio set observacion = :p_observacion
+                    where id = :p_id ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_observacion", $this->observacion );
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $this->dblink->commit();
+
+            return true;
+
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
+        }
+    }
 }

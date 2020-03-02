@@ -1,0 +1,90 @@
+Chofer:
+* Roles: 2(empresa), 3(chofer), 4(Apoderado), 5(Alumno)
+* Menu:
+    * REGISTRO (SE HARA POR WEB)
+    * LOGUEO (punto 1)
+    * MENU
+        * Perfil (punto 7) (aun por desarrollar)
+        * Vehiculos asignados (punto 2)
+        * Servicios (punto 3)
+            - rutas hoy (punto 4)
+            - Historial Vigentes(punto 5)
+            - Historial No vigentes (punto 6)
+        * Reportes (punto 8)
+NOTA: El chofer será registrado via web.
+
+1)  Para el logueo.
+    ruta: webservice/uservalidar.php
+    parametros: //se loguea con el documento de registro y la clave por defecto es 123 hasta que entre a perfiles y cambie su contraseña
+        {
+	        "p_dni": "16454545",
+	        "p_clave": "123"
+        }
+2) Lista de vehiculos asignados:
+    ruta: webservice/chofer_vehiculos_asignados.php
+    parametros:
+        {
+	        "chofer_id" : 4 //solo enviar el id del chofer y retornada la lista de vehiculos que se le fueron asignados en diversas fechas
+        }
+3) Lista de servicios prestados por el chofer. En la tabla referencia hay una fecha de inicio y fin la cual indican la minima fecha de inicio y la maxima fecha de fin indican el tiempo de duracion del servicio.
+Siendo así mostrara la columna vigente, de lo contrario será "no vigente". Tendrá una columna adicional que me envie a la lista de rutas, el nombre de la cabecera de la columna sera (Ver rutas).
+    ruta: webservice/chofer_listado_servicios.php
+    parametros:
+        {
+	        "chofer_id": 4 //id del chofer, que es el mismo de la persona con rol chofer, el id se obtiene al momento de logueo
+        }
+
+4) Al dar click en mi lista de rutas automaticamente enviará una peticion con el id del servicio que se obtiene del punto 3 y el id del chofer.
+    ruta: webservice/chofer_rutas_hoy.php
+    parametros:
+        {
+	        "servicio_id": 3,
+	        "chofer_id": 4
+        }
+
+    NOTA 1: Dentro de los datos que se obtienen en la consulta se ecuentran "ruta_servicio_id", esto es necesario porque luego de la columna hora_entrada , habrá una columna con nomnbre hora_llegada (cabecera),
+            y ella contentra un check en toda su fila , y al dar le check me registrará en el sistema la hora de llegada real.
+
+            ruta: webservice/chofer_rutas_hora_llegada.php
+            parametros: 
+                {
+	                "ruta_servicio_id": 6
+                }
+    
+    NOTA 2: Dentro de los datos que se obtienen en la consulta se ecuentran "ruta_servicio_id", esto es necesario porque luego de la columna hora_salida , habrá una columna con nomnbre hora_salida(cabecera),
+            y ella contentra un check en toda su fila , y al dar le check me registrará en el sistema la hora de salida real.
+
+            ruta: webservice/chofer_rutas_hora_salida.php
+            parametros: 
+                {
+	                "ruta_servicio_id": 6
+                }
+
+    NOTA 3: Al final añadir una columna observacion tipo text,y añadir alugna observacion relevante para el chofer en caso sea necesaria( al costado del text un bton pequeño para que se envíe la observacion a la base de dato)
+        ruta: webservice/chofer_rutas_observacion.php
+            parametros: 
+                {
+	                "ruta_servicio_id": 6,
+                    "observacion": //alguna observacion en caso sea necesario
+                }
+
+
+5) Del mismo modo me podrá filtrar por un rango de fechas pertenecientes al mismo servicio. pero que ya fueron finalizadas.
+    ruta: webservice/chofer_rutas_rango_fechas.php
+     parametros:
+            {
+	            "servicio_id": 3,
+	            "chofer_id": 4,
+                "fecha_inicio": //filtro por fecha  de inicio
+                "fecha_fin":  //filro por fecha final
+            }
+
+6) Partiendo del punto 3 en caso sean servicios no vigentes, tomar en cuenta la ruta y parametros del punto 5
+
+7) Edicion del perfil del usuario incluida contraseña 
+
+8) 2 Reportes.
+
+
+
+
