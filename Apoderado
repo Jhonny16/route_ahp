@@ -75,6 +75,7 @@ Apoderado:
 	        
         }
  6. Solicitud del servicio:
+
     a) Para ello se necesita ingresar datos referenciales del alumno.
              {	
 	        "turno": //El turno será un desplegable (Mañana o tarde ), el grado (desplegable de 1ro a 6to ), la seccion (desplegable de la A a la Z).,
@@ -82,12 +83,16 @@ Apoderado:
 	        "seccion":  //Lista desplegable de A a Z
 	        "hora_entrada": //la hora de entrada y salida tipo time
 	        "hora_salida": //la hora de entrada y salida tipo time
-	        "persona_id": es el alumno, colegio_id//colegio al cual pertenece el alumno(debe mostrarse lista desplegable de todos los colegios que hay, caso contrario registrar el colegio con direccion exacta).
-	        "colegio_id":  //lista de todos los colegios
+	        "persona_id": es el alumno, colegio_id
+	        "colegio_id":  //lista de todos los colegios//colegio al cual pertenece el alumno(debe mostrarse lista desplegable de todos los colegios que hay, caso contrario registrar el colegio con direccion exacta).
             "empresa_id": //deberá cargar de acuerdo al colegio selecccionado, es decir cargo selecciono el colegio y me debe cargar la lista de empresas que brindan servicio para ese colegio.
             "fecha_inicio": //fecha de inicio del servicio
             "fecha_fin": //fecha de fin del servicio
         }
+    NOTA: Hijos del apoderado:
+        ruta: ./route_ahp_api/webservice/alumnos_list.php
+        parametro: {'apoderado_id': //ide del apoderado}
+    
     b) ruta para cargar las empresas de acuerdo al colegio:
                 ../route_ahp_api/webservice/empresa_list_colegio.php
        parametros : {
