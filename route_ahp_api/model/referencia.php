@@ -290,4 +290,33 @@ class referencia  extends conexion
 
         }
     }
+
+    public function detalle($solicitu){
+        try {
+            $sql = "select
+                            'SOL-'|| st.id as solicitud,
+                           c.nombre as colegio,
+                           a.nombre_completo as alumno,
+                           ra.fecha_fin,
+                           ra.hora_entrada,
+                           ra.hora_salida,
+                           ra.turno,
+                           ra.grado,
+                           ra.seccion
+                           ra.id as referencia_id
+                    from solicitud_temporal st inner join referencia_alumno ra on st.referencia_id = ra.id
+                    inner join colegio c on ra.colegio_id = c.id
+                    inner join persona a on ra.persona_id = a.id
+                    inner join persona ap on a.apoderado_id = ap.id
+                    where st.id = :p_solicitud
+                    ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_solicitud", $$solicitu);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
 }

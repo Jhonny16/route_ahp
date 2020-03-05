@@ -122,7 +122,7 @@ class vehiculo extends conexion
                     where 
                     (case when :p_vehiculo_id = 0 then True else v.id = :p_vehiculo_id end) and 
                     (case when :p_chofer_id = 0 then True else p.id = :p_chofer_id end) and
-                    (fecha_inicio between :p_fecha_inicio and :p_fecha_fin )";
+                    (cv.fecha_inicio between :p_fecha_inicio and :p_fecha_fin )";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_vehiculo_id", $vehiculo_id);
             $sentencia->bindParam(":p_chofer_id", $chofer_id);

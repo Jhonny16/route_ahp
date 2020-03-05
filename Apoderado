@@ -134,13 +134,21 @@ Apoderado:
 	    "servicio_detalle_id": 3, //el id del servicio detalle se obtiene del punto 7
         "fecha": "2020-03-12" //se enviara la fecha de hoy
         }
-        
 
+    NOTA1: devolvera dentro de la consulta el id de la ruta y un campo boolean llamado alerta_calificacion,
+          si ese campo boolean es true, entonces mostrar una alerta para que el padre o apoderado envie una calificacion en rango de 1 a 5.
+    
+        
 
 9) Edicion del perfil del usuario incluida contraseña
     
 10) 2 Reportes
 
+11) Enviará la calificacion a esta ruta(Tener en cuenta el punto 8)
+    ruta:   webservice/servicio_ruta_calificacion.php
+    parametros: {'ruta_servicio_id': //id de la ruta del servicio , 'calificacion': (de 1 a 5)//calificacion enviada por el apoderado}
+    
+    NOTA: la consulta devuelve un mensaje que será mostrada en el sistema.
 
 
 

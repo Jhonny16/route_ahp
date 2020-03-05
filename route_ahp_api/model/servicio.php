@@ -5,6 +5,41 @@ require_once '../datos/conexion.php';
 
 class servicio extends conexion
 {
+    private $ruta_servicio_id;
+    private $calificacion;
+
+    /**
+     * @return mixed
+     */
+    public function getRutaServicioId()
+    {
+        return $this->ruta_servicio_id;
+    }
+
+    /**
+     * @param mixed $ruta_servicio_id
+     */
+    public function setRutaServicioId($ruta_servicio_id)
+    {
+        $this->ruta_servicio_id = $ruta_servicio_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCalificacion()
+    {
+        return $this->calificacion;
+    }
+
+    /**
+     * @param mixed $calificacion
+     */
+    public function setCalificacion($calificacion)
+    {
+        $this->calificacion = $calificacion;
+    }
+
 
 
     public function servicio_detalle_aceptacion($apoderado_id)
@@ -68,4 +103,22 @@ class servicio extends conexion
         }
     }
 
+    public function update_calificacion(){
+
+        $this->dblink->beginTransaction();
+        try {
+            $sql = "update ruta_servicio set calificacion = :p_calificacion
+                    where :p_id = :p_id ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_id", $this->ruta_servicio_id);
+            $sentencia->bindParam(":p_calificacion", $this->calificacion);
+            $sentencia->execute();
+            $this->dblink->commit();
+
+            return true;
+
+        }catch (Exception $ex) {
+            throw $ex;
+        }
+    }
 }

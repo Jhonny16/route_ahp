@@ -103,6 +103,16 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@9e93eff" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@3e53b77f" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
             </expand>
             <select />
           </treeState>
@@ -299,7 +309,7 @@
       <workItem from="1583332756368" duration="5855000" />
       <workItem from="1583349255725" duration="142000" />
       <workItem from="1583378235679" duration="4983000" />
-      <workItem from="1583417583752" duration="1624000" />
+      <workItem from="1583417583752" duration="13603000" />
     </task>
     <servers />
   </component>
@@ -311,10 +321,10 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="278" y="30" width="806" height="674" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1583417906869" />
-    <state x="476" y="88" width="410" height="559" key="#com.intellij.ide.util.MemberChooser" timestamp="1583171521312">
+    <state x="476" y="88" width="410" height="559" key="#com.intellij.ide.util.MemberChooser" timestamp="1583448533528">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="476" y="88" width="410" height="559" key="#com.intellij.ide.util.MemberChooser/0.0.1366.735@0.0.1366.735" timestamp="1583171521312" />
+    <state x="476" y="88" width="410" height="559" key="#com.intellij.ide.util.MemberChooser/0.0.1366.735@0.0.1366.735" timestamp="1583448533528" />
     <state x="366" y="177" width="630" height="381" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1582484673609">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -323,38 +333,38 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.735@0.0.1366.735" timestamp="1583378246354" />
-    <state width="1276" height="153" key="GridCell.Tab.0.bottom" timestamp="1583381252022">
+    <state width="1276" height="158" key="GridCell.Tab.0.bottom" timestamp="1583447987207">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="153" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1583381252022" />
-    <state width="1276" height="153" key="GridCell.Tab.0.center" timestamp="1583381252022">
+    <state width="1276" height="158" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1583447987207" />
+    <state width="1276" height="158" key="GridCell.Tab.0.center" timestamp="1583447987206">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="153" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1583381252022" />
-    <state width="1276" height="153" key="GridCell.Tab.0.left" timestamp="1583381252021">
+    <state width="1276" height="158" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1583447987206" />
+    <state width="1276" height="158" key="GridCell.Tab.0.left" timestamp="1583447987206">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="153" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1583381252021" />
-    <state width="1276" height="153" key="GridCell.Tab.0.right" timestamp="1583381252022">
+    <state width="1276" height="158" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1583447987206" />
+    <state width="1276" height="158" key="GridCell.Tab.0.right" timestamp="1583447987207">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="153" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1583381252022" />
-    <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog" timestamp="1583342093363">
+    <state width="1276" height="158" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1583447987207" />
+    <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog" timestamp="1583420627023">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog/0.0.1366.735@0.0.1366.735" timestamp="1583342093363" />
-    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog" timestamp="1583342293713">
+    <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog/0.0.1366.735@0.0.1366.735" timestamp="1583420627023" />
+    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog" timestamp="1583446504601">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1583342293713" />
+    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1583446504601" />
     <state x="187" y="4" key="SettingsEditor" timestamp="1583417869511">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="187" y="4" key="SettingsEditor/0.0.1366.735@0.0.1366.735" timestamp="1583417869511" />
-    <state x="440" y="126" width="482" height="483" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1583381820790">
+    <state x="440" y="126" width="482" height="483" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1583443990585">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="440" y="126" width="482" height="483" key="com.intellij.database.run.ParametersPanel.Standalone/0.0.1366.735@0.0.1366.735" timestamp="1583381820790" />
+    <state x="440" y="126" width="482" height="483" key="com.intellij.database.run.ParametersPanel.Standalone/0.0.1366.735@0.0.1366.735" timestamp="1583443990585" />
     <state x="393" y="12" width="572" height="705" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1582738865873">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -363,9 +373,9 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="378" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.735@0.0.1366.735" timestamp="1583378237645" />
-    <state x="381" y="113" width="603" height="512" key="find.popup" timestamp="1583170926708">
+    <state x="381" y="113" width="603" height="512" key="find.popup" timestamp="1583448291025">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="381" y="113" width="603" height="512" key="find.popup/0.0.1366.735@0.0.1366.735" timestamp="1583170926708" />
+    <state x="381" y="113" width="603" height="512" key="find.popup/0.0.1366.735@0.0.1366.735" timestamp="1583448291025" />
   </component>
 </project>

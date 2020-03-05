@@ -187,7 +187,9 @@ class ruta_servicio extends conexion
                         rs.latitud, rs.longitud, rs.fecha,
                         p.nombre_completo as chofer,
                                v.placa,
-                               v.marca
+                               v.marca,
+                               rs.id as ruta_servicio_id,
+                               rs.alerta_calificacion
                         from
                         ruta_servicio rs
                             inner join persona p on rs.coductor_vehiculo_id = p.id
