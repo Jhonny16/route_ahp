@@ -9,10 +9,12 @@ class persona_criterio extends conexion
 
         try{
 
-            $sql = "select p.id, p.nombre_completo as empresa, (case when SUM(s.calificacion) > 0 then SUM(s.calificacion) else 0 end)  as calificacion
+            $sql = "select p.id, p.nombre_completo as empresa,
+                           (case when SUM(sd.calificacion) > 0 then SUM(sd.calificacion) else 0 end)  as calificacion
                     from persona p left join servicio s on p.id = s.empresa_id
+                    left join servicio_detalle sd on s.id = sd.servicio_id
                     where rol_id = 2
-                    group by p.id, p.nombre_completo
+                    group by p.id, p.nombre_completo;
                     ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
@@ -28,9 +30,10 @@ class persona_criterio extends conexion
 
         try{
 
-            $sql = "select p.id, p.nombre_completo as empresa, SUM(p2.costo) as precio
-                        from persona p inner join precio p2 on p.id = p2.empresa_id
-                        group by p.id, p.nombre_completo; ";
+            $sql = "select p.id, p.nombre_completo as empresa, (case when SUM(p2.costo) > 0 then SUM(p2.costo) else 0 end ) as precio
+                    from persona p left join precio p2 on p.id = p2.empresa_id
+                    where rol_id= 2
+                    group by p.id, p.nombre_completo; ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -47,18 +50,18 @@ class persona_criterio extends conexion
         try{
 
             $sql = "select p.id, p.nombre_completo as empresa,
-                               (case when SUM(extract(minutes from (r.hora_entrada - rs.hora_llegada)) +
-                                              extract(minutes from (r.hora_salida - rs.hora_salida)))
-                                   is null then 0 else
-                                   SUM(extract(minutes from (r.hora_entrada - rs.hora_llegada)) +
-                                       extract(minutes from (r.hora_salida - rs.hora_salida)))
-                                   end) as acumulado
-                        from persona p left outer join servicio se on p.id = se.empresa_id
-                        left join servicio_detalle sd on se.id = sd.servicio_id
-                        left join referencia_alumno r on r.id = sd.referencia_id
-                        left join ruta_servicio rs on sd.id = rs.servicio_detalle_id
-                        where rol_id= 2 and rs.estado = 'F'
-                        group by  p.id, p.nombre_completo;
+                           (case when SUM(extract(minutes from (r.hora_entrada - rs.hora_llegada)) +
+                                          extract(minutes from (r.hora_salida - rs.hora_salida)))
+                               is null then 0 else
+                               SUM(extract(minutes from (r.hora_entrada - rs.hora_llegada)) +
+                                   extract(minutes from (r.hora_salida - rs.hora_salida)))
+                               end) as acumulado
+                    from persona p left outer join servicio se on p.id = se.empresa_id
+                    left join servicio_detalle sd on se.id = sd.servicio_id
+                    left join referencia_alumno r on r.id = sd.referencia_id
+                    left join ruta_servicio rs on sd.id = rs.servicio_detalle_id
+                    where rol_id= 2
+                    group by  p.id, p.nombre_completo;
 
                      ";
             $sentencia = $this->dblink->prepare($sql);

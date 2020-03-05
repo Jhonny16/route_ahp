@@ -54,7 +54,8 @@ class servicio extends conexion
                         inner join persona e on s.empresa_id = e.id
                         inner join vehiculo v on e.id = v.empresa_id
                         inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
-                        where rs.coductor_vehiculo_id = :p_chofer_id group by s.code, s.id
+                        where rs.coductor_vehiculo_id = :p_chofer_id and ra.aceptado = True
+                        group by s.code, s.id
                         order by s.id desc;
                     ";
             $sentencia = $this->dblink->prepare($sql);

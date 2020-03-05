@@ -37,7 +37,7 @@ try {
 
     $result = $objper->create($empresa_id, $fecha_inicio, $fecha_fin);
     if ($result) {
-        Funciones::imprimeJSON(200, "Agregado Correcto", $result);
+        Funciones::imprimeJSON(200, "Su solicitud ha sido enviada", $result);
     } else {
         Funciones::imprimeJSON(203, "Error al momento de agregar", "");
     }

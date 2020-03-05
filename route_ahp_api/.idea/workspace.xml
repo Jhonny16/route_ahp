@@ -67,7 +67,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -102,11 +102,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@62f636ff" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -295,7 +290,16 @@
       <workItem from="1583079909378" duration="1191000" />
       <workItem from="1583083181394" duration="13964000" />
       <workItem from="1583112778812" duration="10705000" />
-      <workItem from="1583158261865" duration="12704000" />
+      <workItem from="1583158261865" duration="13909000" />
+      <workItem from="1583207742880" duration="721000" />
+      <workItem from="1583242700988" duration="3521000" />
+      <workItem from="1583247602437" duration="743000" />
+      <workItem from="1583254446684" duration="473000" />
+      <workItem from="1583289020088" duration="802000" />
+      <workItem from="1583332756368" duration="5855000" />
+      <workItem from="1583349255725" duration="142000" />
+      <workItem from="1583378235679" duration="4983000" />
+      <workItem from="1583417583752" duration="1624000" />
     </task>
     <servers />
   </component>
@@ -303,10 +307,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="278" y="30" width="806" height="674" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582499774501">
+    <state x="278" y="30" width="806" height="674" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583417906869">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="278" y="30" width="806" height="674" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1582499774501" />
+    <state x="278" y="30" width="806" height="674" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.735@0.0.1366.735" timestamp="1583417906869" />
     <state x="476" y="88" width="410" height="559" key="#com.intellij.ide.util.MemberChooser" timestamp="1583171521312">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -315,50 +319,50 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="366" y="177" width="630" height="381" key="DUMP_DIALOG_DIMENSION_KEY/0.0.1366.735@0.0.1366.735" timestamp="1582484673609" />
-    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl" timestamp="1583121419449">
+    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl" timestamp="1583378246354">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.735@0.0.1366.735" timestamp="1583121419449" />
-    <state width="1276" height="128" key="GridCell.Tab.0.bottom" timestamp="1583160848133">
+    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.735@0.0.1366.735" timestamp="1583378246354" />
+    <state width="1276" height="153" key="GridCell.Tab.0.bottom" timestamp="1583381252022">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="128" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1583160848133" />
-    <state width="1276" height="128" key="GridCell.Tab.0.center" timestamp="1583160848130">
+    <state width="1276" height="153" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1583381252022" />
+    <state width="1276" height="153" key="GridCell.Tab.0.center" timestamp="1583381252022">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="128" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1583160848130" />
-    <state width="1276" height="128" key="GridCell.Tab.0.left" timestamp="1583160848127">
+    <state width="1276" height="153" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1583381252022" />
+    <state width="1276" height="153" key="GridCell.Tab.0.left" timestamp="1583381252021">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="128" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1583160848127" />
-    <state width="1276" height="128" key="GridCell.Tab.0.right" timestamp="1583160848131">
+    <state width="1276" height="153" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1583381252021" />
+    <state width="1276" height="153" key="GridCell.Tab.0.right" timestamp="1583381252022">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="128" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1583160848131" />
-    <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog" timestamp="1583095184295">
+    <state width="1276" height="153" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1583381252022" />
+    <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog" timestamp="1583342093363">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog/0.0.1366.735@0.0.1366.735" timestamp="1583095184295" />
-    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog" timestamp="1583172137386">
+    <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog/0.0.1366.735@0.0.1366.735" timestamp="1583342093363" />
+    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog" timestamp="1583342293713">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1583172137386" />
-    <state x="187" y="4" key="SettingsEditor" timestamp="1582499731389">
+    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1583342293713" />
+    <state x="187" y="4" key="SettingsEditor" timestamp="1583417869511">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="187" y="4" key="SettingsEditor/0.0.1366.735@0.0.1366.735" timestamp="1582499731389" />
-    <state x="440" y="126" width="482" height="483" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1583088277118">
+    <state x="187" y="4" key="SettingsEditor/0.0.1366.735@0.0.1366.735" timestamp="1583417869511" />
+    <state x="440" y="126" width="482" height="483" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1583381820790">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="440" y="126" width="482" height="483" key="com.intellij.database.run.ParametersPanel.Standalone/0.0.1366.735@0.0.1366.735" timestamp="1583088277118" />
+    <state x="440" y="126" width="482" height="483" key="com.intellij.database.run.ParametersPanel.Standalone/0.0.1366.735@0.0.1366.735" timestamp="1583381820790" />
     <state x="393" y="12" width="572" height="705" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1582738865873">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="393" y="12" width="572" height="705" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.735@0.0.1366.735" timestamp="1582738865873" />
-    <state x="378" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1583079957379">
+    <state x="378" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1583378237645">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="378" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.735@0.0.1366.735" timestamp="1583079957379" />
+    <state x="378" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.735@0.0.1366.735" timestamp="1583378237645" />
     <state x="381" y="113" width="603" height="512" key="find.popup" timestamp="1583170926708">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

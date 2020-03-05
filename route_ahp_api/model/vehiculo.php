@@ -107,4 +107,33 @@ class vehiculo extends conexion
         }
     }
 
+    public function lista_asignacion($vehiculo_id, $chofer_id, $fecha_inicio, $fecha_fin)
+    {
+        try {
+            $sql = "select
+                    cv.id,
+                    p.nombre_completo as chofer,
+                    ('Marca: ' || v.marca || ' / Placa: ' || v.placa) as vehiculo,
+                           cv.fecha_inicio,
+                           cv.fecha_fin
+                    
+                    from persona p inner join conductor_vehiculo cv on p.id = cv.persona_id
+                    inner join vehiculo v on cv.vehiculo_id = v.id
+                    where 
+                    (case when :p_vehiculo_id = 0 then True else v.id = :p_vehiculo_id end) and 
+                    (case when :p_chofer_id = 0 then True else p.id = :p_chofer_id end) and
+                    (fecha_inicio between :p_fecha_inicio and :p_fecha_fin )";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_vehiculo_id", $vehiculo_id);
+            $sentencia->bindParam(":p_chofer_id", $chofer_id);
+            $sentencia->bindParam(":p_fecha_inicio", $fecha_inicio);
+            $sentencia->bindParam(":p_fecha_fin", $fecha_fin);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
 }

@@ -131,8 +131,10 @@ class referencia  extends conexion
         try {
 
 
-            $sql = "insert into referencia_alumno (turno, grado, seccion, hora_entrada, hora_salida, persona_id, colegio_id) 
-                    VALUES (:p_turno,:p_grado, :p_seccion, :p_hora_entrada, :p_hora_salida, :p_persona_id, :p_colegio_id); ";
+            $sql = "insert into referencia_alumno (turno, grado, seccion, hora_entrada, hora_salida, 
+                    persona_id, colegio_id, fecha_inicio, fecha_fin) 
+                    VALUES (:p_turno,:p_grado, :p_seccion, :p_hora_entrada, :p_hora_salida, 
+                    :p_persona_id, :p_colegio_id,:p_fecha_inicio, :p_fecha_fin); ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_turno", $this->turno);
             $sentencia->bindParam(":p_grado", $this->grado);
@@ -141,26 +143,28 @@ class referencia  extends conexion
             $sentencia->bindParam(":p_hora_salida", $this->hora_salida);
             $sentencia->bindParam(":p_persona_id", $this->persona_id);
             $sentencia->bindParam(":p_colegio_id", $this->colegio_id);
+            $sentencia->bindParam(":p_fecha_inicio", $fecha_inicio);
+            $sentencia->bindParam(":p_fecha_fin", $fecha_fin);
 
             $sentencia->execute();
 
             $sql = "select id from referencia_alumno order by id desc limit 1 ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
-//            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
-//            if ($sentencia->rowCount()) {
-//                $referencia_id = $resultado['id'];
-//
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+            if ($sentencia->rowCount()) {
+                $referencia_id = $resultado['id'];
+                  $res = $this->create_solicitud($referencia_id, $empresa_id);
 //                $res = $this->create_servicio($empresa_id, $fecha_inicio, $fecha_fin, $referencia_id);
-//                if($res){
-//                    return $resultado;
-//                }
-//                else{
-//                    return $resultado;
-//                }
-//            }
-
-            return True;
+                if($res){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
 
         } catch (Exception $ex) {
             throw $ex;
@@ -257,6 +261,25 @@ class referencia  extends conexion
                     (:p_servicio_id, :p_referencia_id); ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_servicio_id", $servicio_id);
+            $sentencia->bindParam(":p_referencia_id", $referencia_id);
+            $sentencia->execute();
+            return True;
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
+        }
+    }
+
+    public function create_solicitud($referencia_id, $empresa_id){
+        try {
+
+
+            $sql = "insert into solicitud_temporal (referencia_id, fecha, empresa_id) VALUES
+                    (:p_referencia_id, current_date, :p_empresa_id); ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_empresa_id", $empresa_id);
             $sentencia->bindParam(":p_referencia_id", $referencia_id);
             $sentencia->execute();
             return True;
