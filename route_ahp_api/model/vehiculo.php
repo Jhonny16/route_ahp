@@ -136,4 +136,28 @@ class vehiculo extends conexion
         }
     }
 
+    public function chofer_vehiculos_serv($empresa_id)
+    {
+        try {
+            $sql = "select
+                    cv.id,
+                    p.nombre_completo as chofer,
+                    ('Marca: ' || v.marca || ' / Placa: ' || v.placa) as vehiculo,
+                           cv.fecha_inicio,
+                           cv.fecha_fin
+                    
+                    from persona p inner join conductor_vehiculo cv on p.id = cv.persona_id
+                    inner join vehiculo v on cv.vehiculo_id = v.id
+                    where v.empresa_id = :p_empresa_id and
+                    (current_date between cv.fecha_inicio and cv.fecha_fin )";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_empresa_id", $empresa_id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
 }

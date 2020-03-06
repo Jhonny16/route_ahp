@@ -9,19 +9,18 @@ if (!isset($_SERVER["HTTP_TOKEN"])) {
     exit();
 }
 
-$solicitud_id = json_decode(file_get_contents("php://input"))->referencia_id;
-$state = json_decode(file_get_contents("php://input"))->estado;
+$referencia_id = json_decode(file_get_contents("php://input"))->referencia_id;
 
 
 try {
     $obj = new solicitud();
-    $obj->setId($solicitud_id);
-    $obj->setEstado($state);
+    $obj->setReferenciaId($referencia_id);
 
     $resultado = $obj->update();
 
     if($resultado){
-        Funciones::imprimeJSON(200, "",$resultado);
+
+        Funciones::imprimeJSON(200, "Has aceptado la solicitud",$resultado);
     }
 
 } catch (Exception $exc) {

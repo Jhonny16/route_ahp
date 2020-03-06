@@ -92,31 +92,77 @@ class solicitud extends conexion
     }
 
 
-
-
-
-    public function lista_solicitudes_por_empresa($parametro, $fecha_inicio, $fecha_fin){
+    public function lista_solicitudes_por_empresa($parametro, $fecha_inicio, $fecha_fin)
+    {
         try {
             $sql = "select
-                           st.id as numero_solcitud,
-                    'SOL-'|| st.id as solicitud,
-                    a.nombre_completo as apoderado,
-                    c.nombre as colegio,
-                    st.fecha as fecha_solicitud,
-                           st.estado
+                          'SOL-'|| st.id as solicitud,
+                       c.nombre as colegio,
+                       a.nombre_completo as apoderado,
+                       p.nombre_completo as alumno,
+                       ra.fecha_inicio,
+                       ra.fecha_fin,
+                       ra.hora_entrada,
+                       ra.hora_salida,
+                       ra.turno,
+                       ra.grado ||' '|| ra.seccion as grado_seccion,
+                       st.fecha as fecha_solicitud,
+                       st.estado ,
+                       ra.id as referencia_id
                     from referencia_alumno ra inner join solicitud_temporal st on ra.id = st.referencia_id
                     inner join persona e on st.empresa_id = e.id
                     inner join persona p on p.id = ra.persona_id
                     inner join persona a on p.apoderado_id = a.id
                     inner join colegio c on ra.colegio_id = c.id
-                    where st.empresa_id = :p_empresa_id and estado in ('Nuevo','Rechazada')
-                    (case when :p_parametro= 0 then True else st.fecha between :p_fecha_inicio and :p_fecha_fin end)
+                    where st.empresa_id = :p_empresa_id and (st.estado = 'Nuevo' or st.estado='Rechazado') and
+                    (case when :p_parametro = 0 then True else st.fecha between :p_fecha_inicio and :p_fecha_fin end)
                     ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_empresa_id", $this->empresa_id);
             $sentencia->bindParam(":p_parametro", $parametro);
             $sentencia->bindParam(":p_fecha_inicio", $fecha_inicio);
             $sentencia->bindParam(":p_fecha_fin", $fecha_fin);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
+    public function lista_solicitudes_por_empresa_aceptadas($parametro, $fecha_inicio, $fecha_fin,$colegio_id, $turno)
+    {
+        try {
+            $sql = "select
+                           'SOL-'|| st.id as solicitud,
+                       c.nombre as colegio,
+                       a.nombre_completo as apoderado,
+                       p.nombre_completo as alumno,
+                       ('Inicio: ' || ra.fecha_inicio ||' / '|| 'Fin:' || ra.fecha_fin) as fecha_contrato,
+                       ('Horario: ' ||  ra.hora_entrada ||' a '|| ra.hora_salida) as horario, 
+                       ra.turno,
+                       ra.grado ||' '|| ra.seccion as grado_seccion,
+                       st.fecha as fecha_solicitud,
+                       st.estado ,
+                       ra.id as referencia_id
+                    from referencia_alumno ra inner join solicitud_temporal st on ra.id = st.referencia_id
+                    inner join persona e on st.empresa_id = e.id
+                    inner join persona p on p.id = ra.persona_id
+                    inner join persona a on p.apoderado_id = a.id
+                    inner join colegio c on ra.colegio_id = c.id
+                    where st.empresa_id = :p_empresa_id and st.estado = 'Aceptado' and
+                    (case when :p_parametro= 0 then True else st.fecha between :p_fecha_inicio and :p_fecha_fin end) and
+                    (case when :p_colegio= 0 then True else c.id = :p_colegio end) and  
+                    (case when :p_turno = '0' then True else ra.turno = :p_turno end) 
+                     
+                    ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_empresa_id", $this->empresa_id);
+            $sentencia->bindParam(":p_parametro", $parametro);
+            $sentencia->bindParam(":p_fecha_inicio", $fecha_inicio);
+            $sentencia->bindParam(":p_fecha_fin", $fecha_fin);
+            $sentencia->bindParam(":p_colegio", $colegio_id);
+            $sentencia->bindParam(":p_turno", $turno);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;
@@ -133,11 +179,10 @@ class solicitud extends conexion
         try {
 
             $sql = "update solicitud_temporal set 
-                    estado = :p_estado                    
-                    where id = :p_id ";
+                    estado = 'Aceptado'                    
+                    where referencia_id = :p_ref_id ";
             $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_estado", $this->estado);
-            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->bindParam(":p_ref_id", $this->referencia_id);
             $sentencia->execute();
             $this->dblink->commit();
 

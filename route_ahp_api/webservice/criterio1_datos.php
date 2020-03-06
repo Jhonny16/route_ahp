@@ -24,7 +24,13 @@ try {
         }
 
         for($i=0; $i<count($resultado); $i++){
-            $resultado[$i]['valor'] =  round( $resultado[$i]['calificacion']/ $suma  ,3);
+            if($resultado[$i]['calificacion'] == 0){
+                $resultado[$i]['valor'] =  round( $resultado[$i]['calificacion'] ,3);
+
+            }else{
+                $resultado[$i]['valor'] =  round( $resultado[$i]['calificacion']/ $suma  ,3);
+
+            }
             $obj->create_update($resultado[$i]['id'], 1, $resultado[$i]['valor']);
         }
 

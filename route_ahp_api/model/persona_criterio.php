@@ -10,9 +10,10 @@ class persona_criterio extends conexion
         try{
 
             $sql = "select p.id, p.nombre_completo as empresa,
-                           (case when SUM(sd.calificacion) > 0 then SUM(sd.calificacion) else 0 end)  as calificacion
+                           (case when SUM(rs.calificacion) > 0 then SUM(rs.calificacion) else 0 end)  as calificacion
                     from persona p left join servicio s on p.id = s.empresa_id
-                    left join servicio_detalle sd on s.id = sd.servicio_id
+                    left join servicio_detalle sd on s.id = sd.servicio_id 
+                    left join ruta_servicio rs on rs.servicio_detalle_id = sd.id
                     where rol_id = 2
                     group by p.id, p.nombre_completo;
                     ";
