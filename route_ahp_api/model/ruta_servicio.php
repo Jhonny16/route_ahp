@@ -401,7 +401,7 @@ class ruta_servicio extends conexion
                            c.nombre as colegio,
                             rs.*,
                             'Entrada: ' || rs.hora_llegada ||' / Salida: ' || rs.hora_salida as hora, 
-                           (case when rs.estado = 'F' then 'Finalizado' else 'En camino' end) as estado_ruta
+                           (case when rs.estado = 'F' then 'Finalizado' else 'En proceso' end) as estado_ruta
                     from
                         servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
                         inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
@@ -429,12 +429,13 @@ class ruta_servicio extends conexion
 
 
             $sql = "select
-                           rs.id,
+                           s.id,
                     rs.latitud, rs.longitud
                     from servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
                     inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
                     where s.id = :p_servicio_id and (rs.latitud is not null and rs.longitud is not null)
-                    and rs.fecha = current_date
+                    and rs.fecha = current_date  and rs.estado = 'P'
+                    --and rs.fecha = '2020-03-02'
                     order by rs.id desc limit 1; ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_servicio_id", $servicio_id);

@@ -106,6 +106,11 @@
                 <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="com.intellij.database.console.session.MessageBusSession@1877a489" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@1d2d6972" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
             </expand>
             <select />
           </treeState>
@@ -308,7 +313,7 @@
       <workItem from="1583490756960" duration="658000" />
       <workItem from="1583505168815" duration="13181000" />
       <workItem from="1583636347439" duration="4610000" />
-      <workItem from="1583692453414" duration="8391000" />
+      <workItem from="1583692453414" duration="19036000" />
     </task>
     <servers />
   </component>
@@ -332,22 +337,22 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.735@0.0.1366.735" timestamp="1583705930522" />
-    <state width="1276" height="169" key="GridCell.Tab.0.bottom" timestamp="1583520996478">
+    <state width="1276" height="11" key="GridCell.Tab.0.bottom" timestamp="1583728324350">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="169" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1583520996478" />
-    <state width="1276" height="169" key="GridCell.Tab.0.center" timestamp="1583520996476">
+    <state width="1276" height="11" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1583728324350" />
+    <state width="1276" height="11" key="GridCell.Tab.0.center" timestamp="1583728324350">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="169" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1583520996476" />
-    <state width="1276" height="169" key="GridCell.Tab.0.left" timestamp="1583520996474">
+    <state width="1276" height="11" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1583728324350" />
+    <state width="1276" height="11" key="GridCell.Tab.0.left" timestamp="1583728324349">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="169" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1583520996474" />
-    <state width="1276" height="169" key="GridCell.Tab.0.right" timestamp="1583520996477">
+    <state width="1276" height="11" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1583728324349" />
+    <state width="1276" height="11" key="GridCell.Tab.0.right" timestamp="1583728324350">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state width="1276" height="169" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1583520996477" />
+    <state width="1276" height="11" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1583728324350" />
     <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog" timestamp="1583420627023">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

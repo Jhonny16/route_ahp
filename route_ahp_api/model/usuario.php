@@ -201,7 +201,9 @@ class usuario extends conexion
                         p.direccion,
                         p.fecha_nacimiento,
                         p.password,
-                        p.estado
+                        p.estado,
+                        p.latitud,
+                        p.longitud
                         from
                         persona p inner join rol r on p.rol_id = r.id
                         where p.documento_identidad = :p_dni";

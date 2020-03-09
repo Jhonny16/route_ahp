@@ -12,12 +12,14 @@ if (!isset($_SERVER["HTTP_TOKEN"])) {
 $detalle_referencia = json_decode(file_get_contents("php://input"))->detalle_referencia;
 $empresa_id = json_decode(file_get_contents("php://input"))->empresa_id;
 $conductor_vehiculo_id = json_decode(file_get_contents("php://input"))->conductor_vehiculo_id;
+$latitud = json_decode(file_get_contents("php://input"))->latitud;
+$longitud = json_decode(file_get_contents("php://input"))->longitud;
 
 try {
     $obj = new servicio();
     $obj->setReferenciaId($detalle_referencia);
     $obj->setEmpresaId($empresa_id);
-    $resultado = $obj->create_servicio($conductor_vehiculo_id);
+    $resultado = $obj->create_servicio($conductor_vehiculo_id,$latitud, $longitud);
     if($resultado){
         Funciones::imprimeJSON(200, "Se generó el servicio ",$resultado);
     }else{

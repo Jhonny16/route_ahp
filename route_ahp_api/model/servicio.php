@@ -158,7 +158,7 @@ class servicio extends conexion
         }
     }
 
-    public function create_servicio($conducto_vehiculo_id)
+    public function create_servicio($conducto_vehiculo_id,$latitud, $longitud)
     {
         try {
 
@@ -219,7 +219,7 @@ class servicio extends conexion
 
             if ($sentencia->rowCount()) {
                 $servicio_id = $resultado['id'];
-                $res = $this->create_servicio_detalle($servicio_id, $datosDetalle,$conducto_vehiculo_id);
+                $res = $this->create_servicio_detalle($servicio_id, $datosDetalle,$conducto_vehiculo_id,$latitud, $longitud);
                 if ($res) {
                     return true;
                 } else {
@@ -234,7 +234,7 @@ class servicio extends conexion
         }
     }
 
-    public function create_servicio_detalle($servicio_id, $datosDetalle,$conducto_vehiculo_id)
+    public function create_servicio_detalle($servicio_id, $datosDetalle,$conducto_vehiculo_id,$latitud, $longitud)
     {
         try {
 
@@ -260,7 +260,7 @@ class servicio extends conexion
                             fecha_inicio, fecha_fin,
                                    fecha_fin - fecha_inicio as dias
                             from referencia_alumno
-                            where id = :p_ref_id ";
+                            where id = :p_referencia_id ";
                     $sentencia = $this->dblink->prepare($sql);
                     $sentencia->bindParam(":p_referencia_id", $value->referencia_id);
                     $sentencia->execute();
@@ -272,34 +272,37 @@ class servicio extends conexion
 
                         $j = 6;
                         for ($i = 0; $i <= $dias; $i++) {
-                            $alerta_calificacion = false;
+                            $alerta_calificacion = 0;
                             if ($i == $j){
                                 $alerta_calificacion = true;
                                 $j = $j + 6;
                             }
 
-                            $sql = "insert into ruta_servicio (fecha, conductor_vehiculo_id,servicio_detalle_id,alerta_calificacion) VALUES 
-                                    ((CAST($fecha_inicio AS DATE) + CAST(''+ i +' days' AS INTERVAL), :p_cv_id, :p_serdet_id, :p_alerta_calificacion); ";
+                            $sql = "insert into ruta_servicio (fecha, coductor_vehiculo_id,servicio_detalle_id,alerta_calificacion,latitud,longitud) 
+                                    VALUES (CAST('$fecha_inicio' AS DATE) + CAST('$i days' AS INTERVAL), 
+                                    :p_cv_id, :p_serdet_id, :p_alerta_calificacion, :p_latitud, :p_longitud); ";
                             $sentencia = $this->dblink->prepare($sql);
                             $sentencia->bindParam(":p_cv_id", $conducto_vehiculo_id);
                             $sentencia->bindParam(":p_serdet_id", $servicio_detalle_id);
                             $sentencia->bindParam(":p_alerta_calificacion", $alerta_calificacion);
+                            $sentencia->bindParam(":p_latitud", $latitud);
+                            $sentencia->bindParam(":p_longitud", $longitud);
                             $sentencia->execute();
 
-
                         }
-                        return true;
 
-                    }else{
-                        return false;
                     }
-                }
-                else{
-                    return false;
-                }
+                    $this->dblink->beginTransaction();
+                    $sql = "update solicitud_temporal set estado = 'Servicio en proceso' where referencia_id = :p_ref_id ";
+                    $sentencia = $this->dblink->prepare($sql);
+                    $sentencia->bindParam(":p_ref_id", $value->referencia_id);
+                    $sentencia->execute();
+                    $this->dblink->commit();
 
+                }
 
             }
+            return true;
 
 
 
