@@ -315,6 +315,7 @@ class servicio extends conexion
         try {
             $sql = "select
                            s.code,
+                           s.id as servicio_id,
                             count(d.referencia_id) as numero_alumnos,
                            (case when
                                      (select count(*) from servicio_detalle sd
@@ -334,5 +335,7 @@ class servicio extends conexion
             throw $ex;
         }
     }
+
+
 
 }

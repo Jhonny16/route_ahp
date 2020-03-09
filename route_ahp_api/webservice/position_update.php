@@ -3,7 +3,7 @@
 
 header('Access-Control-Allow-Origin: *');
 
-require_once '../model/posicion.php';
+require_once '../model/ruta_servicio.php';
 require_once '../util/funciones/Funciones.clase.php';
 require_once 'tokenvalidar.php';
 
@@ -20,10 +20,7 @@ $longitud_actual = json_decode(file_get_contents("php://input"))->longitud_actua
 
 try {
     $objeto = new posicion();
-    $objeto->setServicioId($servicio_id);
-    $objeto->setLatitudActual($latitud_actual);
-    $objeto->setLongitudActual($longitud_actual);
-    $res = $objeto->update_position();
+    $res = $objeto->update_position($servicio_id, $latitud_actual, $longitud_actual);
 
     if ($res == true) {
         Funciones::imprimeJSON(200, "Se actualizo la posicion", $res);

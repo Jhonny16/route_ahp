@@ -1,6 +1,7 @@
 <?php
 
 require_once '../datos/conexion.php';
+
 class ruta_servicio extends conexion
 {
 
@@ -29,7 +30,6 @@ class ruta_servicio extends conexion
     {
         $this->hora_salida = $hora_salida;
     }
-
 
 
     /**
@@ -177,8 +177,6 @@ class ruta_servicio extends conexion
     }
 
 
-
-
     public function ruta_servicio_consulta()
     {
 
@@ -241,7 +239,8 @@ class ruta_servicio extends conexion
         }
     }
 
-    public function rutas_chofer_hoy($servicio_id, $chofer_id){
+    public function rutas_chofer_hoy($servicio_id, $chofer_id)
+    {
 
         try {
             $sql = "select
@@ -278,7 +277,8 @@ class ruta_servicio extends conexion
 
     }
 
-    public function rutas_chofer_rango_fechas($servicio_id, $chofer_id, $fecha_inicio, $fecha_fin){
+    public function rutas_chofer_rango_fechas($servicio_id, $chofer_id, $fecha_inicio, $fecha_fin)
+    {
 
         try {
             $sql = "select
@@ -319,7 +319,8 @@ class ruta_servicio extends conexion
     }
 
 
-    public function hora_llegada(){
+    public function hora_llegada()
+    {
         try {
 
 
@@ -342,7 +343,8 @@ class ruta_servicio extends conexion
         }
     }
 
-    public function hora_salida(){
+    public function hora_salida()
+    {
         try {
 
 
@@ -350,7 +352,7 @@ class ruta_servicio extends conexion
             $sql = "update ruta_servicio set hora_salida = :p_hora_salida, estado = 'F'
                     where id = :p_id ";
             $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_hora_salida", $this->hora_salida );
+            $sentencia->bindParam(":p_hora_salida", $this->hora_salida);
             $sentencia->bindParam(":p_id", $this->id);
             $sentencia->execute();
             $this->dblink->commit();
@@ -365,7 +367,8 @@ class ruta_servicio extends conexion
         }
     }
 
-    public function observacion(){
+    public function observacion()
+    {
         try {
 
 
@@ -373,7 +376,7 @@ class ruta_servicio extends conexion
             $sql = "update ruta_servicio set observacion = :p_observacion
                     where id = :p_id ";
             $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_observacion", $this->observacion );
+            $sentencia->bindParam(":p_observacion", $this->observacion);
             $sentencia->bindParam(":p_id", $this->id);
             $sentencia->execute();
             $this->dblink->commit();
@@ -387,4 +390,84 @@ class ruta_servicio extends conexion
 
         }
     }
+
+    public function ruta_servicio_por_empresa($servicio_id)
+    {
+        try {
+
+
+            $sql = "select
+                           p.nombre_completo as alumno,
+                           c.nombre as colegio,
+                            rs.*,
+                            'Entrada: ' || rs.hora_llegada ||' / Salida: ' || rs.hora_salida as hora, 
+                           (case when rs.estado = 'F' then 'Finalizado' else 'En camino' end) as estado_ruta
+                    from
+                        servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
+                        inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
+                    inner join referencia_alumno ra on sd.referencia_id = ra.id
+                    inner join persona p on ra.persona_id = p.id
+                    inner join colegio c on ra.colegio_id = c.id
+                    where s.id = :p_servicio_id and (rs.latitud is not null and rs.longitud is not null)
+                    order by rs.fecha desc ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_servicio_id", $servicio_id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
+        }
+    }
+
+    public function ruta_servicio_posicion($servicio_id)
+    {
+        try {
+
+
+            $sql = "select
+                           rs.id,
+                    rs.latitud, rs.longitud
+                    from servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
+                    inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
+                    where s.id = :p_servicio_id and (rs.latitud is not null and rs.longitud is not null)
+                    and rs.fecha = current_date
+                    order by rs.id desc limit 1; ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_servicio_id", $servicio_id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+            return $resultado;
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
+        }
+    }
+
+    public function update_position($servicio_id, $latitud, $longitud){
+
+        $this->dblink->beginTransaction();
+        try {
+            $sql = "update ruta_servicio
+                    set latitud = :p_latitud, longitud = :p_longitud where fecha = current_date and
+                    (servicio_detalle_id = (select sd.id from servicio_detalle sd inner join servicio s on sd.servicio_id = s.id where s.id = :p_servicio_id))";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_servicio_id", $servicio_id);
+            $sentencia->bindParam(":p_latitud", $latitud);
+            $sentencia->bindParam(":p_longitud", $longitud);
+            $sentencia->execute();
+            $this->dblink->commit();
+
+            return true;
+
+        }catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
 }

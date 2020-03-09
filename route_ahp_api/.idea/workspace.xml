@@ -65,7 +65,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Documentos/Proyectos PHP/easywaste" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -104,7 +104,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:bd_segurity@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@1c1c8a27" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@1877a489" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -307,6 +307,8 @@
       <workItem from="1583471072246" duration="4182000" />
       <workItem from="1583490756960" duration="658000" />
       <workItem from="1583505168815" duration="13181000" />
+      <workItem from="1583636347439" duration="4610000" />
+      <workItem from="1583692453414" duration="8391000" />
     </task>
     <servers />
   </component>
@@ -326,10 +328,10 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="366" y="177" width="630" height="381" key="DUMP_DIALOG_DIMENSION_KEY/0.0.1366.735@0.0.1366.735" timestamp="1582484673609" />
-    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl" timestamp="1583512710639">
+    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl" timestamp="1583705930522">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.735@0.0.1366.735" timestamp="1583512710639" />
+    <state x="466" y="127" width="430" height="481" key="FileChooserDialogImpl/0.0.1366.735@0.0.1366.735" timestamp="1583705930522" />
     <state width="1276" height="169" key="GridCell.Tab.0.bottom" timestamp="1583520996478">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -350,14 +352,14 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="452" y="188" width="458" height="358" key="NewPhpClassDialog/0.0.1366.735@0.0.1366.735" timestamp="1583420627023" />
-    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog" timestamp="1583516692069">
+    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog" timestamp="1583645595701">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1583516692069" />
-    <state x="187" y="4" key="SettingsEditor" timestamp="1583452388248">
+    <state x="503" y="295" width="355" height="144" key="NewPhpFileDialog/0.0.1366.735@0.0.1366.735" timestamp="1583645595701" />
+    <state x="187" y="4" key="SettingsEditor" timestamp="1583636490786">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="187" y="4" key="SettingsEditor/0.0.1366.735@0.0.1366.735" timestamp="1583452388248" />
+    <state x="187" y="4" key="SettingsEditor/0.0.1366.735@0.0.1366.735" timestamp="1583636490786" />
     <state x="440" y="126" width="482" height="483" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1583443990585">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

@@ -85,6 +85,14 @@ Siendo así mostrara la columna vigente, de lo contrario será "no vigente". Ten
 
 8) 2 Reportes.
 
+9) Enviar posicion por cada step que muestre google maps, para modo de prueba.
+    ruta: webservice/position_update.php
+    parametros:
+            {
+	            "servicio_id": 3,
+	            "latitud_actual": //latitud,
+                "longitud_actual": //longitud
 
+            }
 
 

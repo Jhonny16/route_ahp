@@ -97,11 +97,12 @@ class posicion extends conexion
 
         $this->dblink->beginTransaction();
         try {
-            $sql = "update position set lat_actual = :p_lat_actual, lon_actual = :p_lon_actual
-                    where :p_servicio_id = :p_servicio_id ";
+            $sql = "update ruta_servicio
+                    set latitud = :p_latitud, longitud= :p_longitud where fecha = current_date and
+                    (servicio_detalle_id = (select sd.id from servicio_detalle sd inner join servicio s on sd.servicio_id = s.id where s.id = :p_servicio_id))";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_servicio_id", $this->servicio_id);
-            $sentencia->bindParam(":p_lat_actual", $this->latitud_actual);
+            $sentencia->bindParam(":p_latitud", $this->latitud_actual);
             $sentencia->bindParam(":p_lon_actual", $this->longitud_actual);
             $sentencia->execute();
             $this->dblink->commit();

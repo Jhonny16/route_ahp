@@ -10,19 +10,19 @@
       <Owner>postgres</Owner>
       <IntrospectionStateNumber>29976</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|30212|30209|1
-sequence|table|30217|30214|1
+      <Relations>sequence|table|44397|44394|1
+sequence|table|32290|32292|1
 sequence|table|30223|30219|1
+sequence|table|30217|30214|1
 sequence|table|30232|30229|1
-sequence|table|30234|30225|1
 sequence|table|30239|30236|1
 sequence|table|30244|30241|1
+sequence|table|30212|30209|1
 sequence|table|30249|30246|1
-sequence|table|30259|30251|1
 sequence|table|30264|30261|1
 sequence|table|30269|30266|1
-sequence|table|32290|32292|1
-sequence|table|44397|44394|1
+sequence|table|30234|30225|1
+sequence|table|30259|30251|1
 </Relations>
     </database>
     <database id="3" parent="1" name="easywaste">
