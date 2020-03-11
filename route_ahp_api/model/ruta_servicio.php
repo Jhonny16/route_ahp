@@ -430,9 +430,15 @@ class ruta_servicio extends conexion
 
             $sql = "select
                            s.id,
-                    rs.latitud, rs.longitud
+                    rs.latitud, rs.longitud,
+                     c.nombre_completo as chofer,
+                    'Placa: ' || v.placa || ' ' || 'Marca:' || v.marca as vehiculo
                     from servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
                     inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
+                    inner join conductor_vehiculo cv on rs.coductor_vehiculo_id = cv.id
+                    inner join vehiculo v on cv.vehiculo_id = v.id
+                    inner join persona c on rs.coductor_vehiculo_id = c.id                
+                        
                     where s.id = :p_servicio_id and (rs.latitud is not null and rs.longitud is not null)
                     and rs.fecha = current_date  and rs.estado = 'P'
                     --and rs.fecha = '2020-03-02'
@@ -468,6 +474,53 @@ class ruta_servicio extends conexion
 
         }catch (Exception $ex) {
             throw $ex;
+        }
+    }
+
+    public function colegios_ruta_servicio($servicio_id){
+        try {
+
+
+            $sql = "select
+                    c.id, c.nombre, c.direccion, c.latitud, c.longitud
+                    from servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
+                    inner join referencia_alumno ra on sd.referencia_id = ra.id
+                    inner join colegio c on ra.colegio_id = c.id
+                    where s.id = :p_servicio_id
+                    group by c.id, c.nombre, c.direccion, c.latitud, c.longitud; ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_servicio_id", $servicio_id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
+        }
+    }
+
+    public function alumnos_ruta_servicio($servicio_id){
+            try {
+
+            $sql = "select
+                     p.id, p.direccion, p.latitud, p.longitud
+                    from servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
+                    inner join referencia_alumno ra on sd.referencia_id = ra.id
+                    inner join persona p on ra.persona_id = p.id
+                    where s.id = :p_servicio_id
+                     ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_servicio_id", $servicio_id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+
+        } catch (Exception $ex) {
+            throw $ex;
+
+
         }
     }
 
