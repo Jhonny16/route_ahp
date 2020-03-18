@@ -16,7 +16,9 @@ try {
     $obj = new servicio();
     $resultado = $obj->lista_servicios_chofer($chofer_id);
 
-    if($resultado){
+    if($resultado == -1 ){
+        Funciones::imprimeJSON(203, "El chofer no tiene ningun vehículo asignado actualmente. Tampoco tiene algun servicio que atender.",$resultado);
+    }else{
         Funciones::imprimeJSON(200, "",$resultado);
     }
 

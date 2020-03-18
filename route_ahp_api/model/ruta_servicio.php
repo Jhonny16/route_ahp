@@ -189,10 +189,10 @@ class ruta_servicio extends conexion
                                rs.id as ruta_servicio_id,
                                rs.alerta_calificacion
                         from
-                        ruta_servicio rs
-                            inner join persona p on rs.coductor_vehiculo_id = p.id
-                        inner join conductor_vehiculo cv on cv.persona_id = p.id
-                        inner join vehiculo v on cv.vehiculo_id = v.id
+                       ruta_servicio rs
+                        inner join conductor_vehiculo cv on rs.coductor_vehiculo_id = cv.id
+                        inner join persona p on cv.persona_id = p.id
+                            inner join vehiculo v on cv.vehiculo_id = v.id
                         where rs.servicio_detalle_id = :p_servicio_detalle_id and rs.fecha = :p_fecha ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_servicio_detalle_id", $this->servicio_detalle_id);
@@ -222,8 +222,8 @@ class ruta_servicio extends conexion
                     
                     from
                         ruta_servicio rs
-                            inner join persona p on rs.coductor_vehiculo_id = p.id
-                            inner join conductor_vehiculo cv on cv.persona_id = p.id
+                        inner join conductor_vehiculo cv on rs.coductor_vehiculo_id = cv.id
+                        inner join persona p on cv.persona_id = p.id
                             inner join vehiculo v on cv.vehiculo_id = v.id
                             inner join servicio_detalle sd on rs.servicio_detalle_id = sd.id
                             inner join referencia_alumno ra on sd.referencia_id = ra.id
@@ -243,7 +243,15 @@ class ruta_servicio extends conexion
     {
 
         try {
-            $sql = "select
+            $sql = "select id from conductor_vehiculo where persona_id = :p_chofer_id and ( current_date between fecha_inicio and fecha_fin )";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_chofer_id", $chofer_id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+             if ($sentencia->rowCount()) {
+                $conductor_vehiculo_id = $resultado['id'];
+
+                $sql = "select
                         s.code ,
                         'SERV-D-' || sd.id as code_servicio_detalle,
                         p.nombre_completo as alumno,
@@ -256,21 +264,25 @@ class ruta_servicio extends conexion
                         rs.observacion,
                         rs.estado,
                         rs.id as ruta_servicio_id
-
-                    
-                    from
+                        from
                         servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
-                                   inner join referencia_alumno ra on sd.referencia_id = ra.id
-                                   inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
-                                   inner join persona p on ra.persona_id = p.id
-                                   inner join colegio c on ra.colegio_id = c.id
-                    where s.id = :p_servicio_id and rs.coductor_vehiculo_id = :p_chofer_id and rs.fecha = current_date ; ";
-            $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_servicio_id", $servicio_id);
-            $sentencia->bindParam(":p_chofer_id", $chofer_id);
-            $sentencia->execute();
-            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+                        inner join referencia_alumno ra on sd.referencia_id = ra.id
+                        inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
+                        inner join persona p on ra.persona_id = p.id
+                        inner join colegio c on ra.colegio_id = c.id
+                        where s.id = :p_servicio_id and rs.coductor_vehiculo_id = :p_cv_id and rs.fecha = current_date ; ";
+                $sentencia = $this->dblink->prepare($sql);
+                $sentencia->bindParam(":p_servicio_id", $servicio_id);
+                $sentencia->bindParam(":p_cv_id", $conductor_vehiculo_id);
+                $sentencia->execute();
+                $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+                return $resultado;
+             }else{
+                return -1;
+             }
+
+
+
         } catch (Exception $ex) {
             throw $ex;
         }
@@ -281,7 +293,15 @@ class ruta_servicio extends conexion
     {
 
         try {
-            $sql = "select
+
+         $sql = "select id from conductor_vehiculo where persona_id = :p_chofer_id and ( current_date between fecha_inicio and fecha_fin )";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_chofer_id", $chofer_id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+             if ($sentencia->rowCount()) {
+                $conductor_vehiculo_id = $resultado['id'];
+                $sql = "select
                         s.code ,
                         'SERV-D-' || sd.id as code_servicio_detalle,
                         p.nombre_completo as alumno,
@@ -290,28 +310,33 @@ class ruta_servicio extends conexion
                         c.latitud as latitud_colegio,
                         c.longitud as longitud_colegio,
                         ra.hora_entrada,
-                        rs.hora_llegada as hora_llegada_real
+                        rs.hora_llegada as hora_llegada_real,
                         ra.hora_salida,
-                        rs.hora_salida as hora_salida_real
+                        rs.hora_salida as hora_salida_real,
                         rs.observacion,
                         rs.estado
-                    
+
                     from
                         servicio s inner join servicio_detalle sd on s.id = sd.servicio_id
                                    inner join referencia_alumno ra on sd.referencia_id = ra.id
                                    inner join ruta_servicio rs on sd.id = rs.servicio_detalle_id
                                    inner join persona p on ra.persona_id = p.id
                                    inner join colegio c on ra.colegio_id = c.id
-                    where s.id = :p_servicio_id and rs.coductor_vehiculo_id = :p_chofer_id 
-                    and  (rs.fecha between :p_fecha_inicio and :p_fecha_fin)";
-            $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_servicio_id", $servicio_id);
-            $sentencia->bindParam(":p_chofer_id", $chofer_id);
-            $sentencia->bindParam(":p_fecha_inicio", $fecha_inicio);
-            $sentencia->bindParam(":p_fecha_fin", $fecha_fin);
-            $sentencia->execute();
-            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-            return $resultado;
+                    where s.id = :p_servicio_id and rs.coductor_vehiculo_id = :p_cv_id
+                    and  (rs.fecha between :p_fecha_inicio and :p_fecha_fin) and rs.estado = 'F' ";
+                $sentencia = $this->dblink->prepare($sql);
+                $sentencia->bindParam(":p_servicio_id", $servicio_id);
+                $sentencia->bindParam(":p_cv_id", $conductor_vehiculo_id);
+                $sentencia->bindParam(":p_fecha_inicio", $fecha_inicio);
+                $sentencia->bindParam(":p_fecha_fin", $fecha_fin);
+                $sentencia->execute();
+                $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+                return $resultado;
+             }
+             else{
+                return -1;
+             }
+
         } catch (Exception $ex) {
             throw $ex;
         }

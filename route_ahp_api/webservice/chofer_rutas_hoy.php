@@ -17,7 +17,9 @@ try {
     $obj = new ruta_servicio();
     $resultado = $obj->rutas_chofer_hoy($servicio_id,$chofer_id);
 
-    if($resultado){
+    if($resultado == -1 ){
+        Funciones::imprimeJSON(203, "El chofer no tiene rutas para hoy. ",$resultado);
+    }else{
         Funciones::imprimeJSON(200, "",$resultado);
     }
 

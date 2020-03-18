@@ -112,13 +112,13 @@ Apoderado:
             }
         
      NOTA Número 1:En los resultados mostrará toda la lista que devuelve la peticion, adicionalemnte se verá una columna donde diga ver rutas. 
-          Si la peticion es "no aceptada y vigente" entonces debe mostrar el boton (ver ruta), de lo contrario no se mostrará el boton.
+          Si la peticion es "aceptada y vigente" entonces debe mostrar el boton (ver ruta), de lo contrario no se mostrará el boton.
      NOTA Número 2: si es "aceptada y no vigente" allí mostrará un botom que mande un modal o quiza mandará a otra vista donde se verá el historial de rutas.
                       ruta: webservice/servicio_ruta_historial.php
                       parametros:
                             {
-	                        "servicio_detalle_id": 3, //el id del servicio detalle se obtiene de este punto
-                            "fecha": "2020-03-12" //se enviara cualquier fecha a modo de filtro
+	                        "servicio_detalle_id": 21, //el id del servicio detalle se obtiene de este punto
+                            "fecha": "2020-03-05" //se enviara cualquier fecha a modo de filtro
                             }
      NOTA Número 3: si es "no aceptada" no aparece ningun boton, solo un guion "-"
                   
@@ -131,8 +131,8 @@ Apoderado:
     ruta: webservice/servicio_ruta.php
     parametros:
         {
-	    "servicio_detalle_id": 3, //el id del servicio detalle se obtiene del punto 7
-        "fecha": "2020-03-12" //se enviara la fecha de hoy
+	    "servicio_detalle_id": 21, //el id del servicio detalle se obtiene del punto 7
+        "fecha": "2020-03-06" //se enviara la fecha de hoy
         }
 
     NOTA1: devolvera dentro de la consulta el id de la ruta y un campo boolean llamado alerta_calificacion,

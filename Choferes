@@ -38,7 +38,7 @@ Siendo así mostrara la columna vigente, de lo contrario será "no vigente". Ten
     ruta: webservice/chofer_rutas_hoy.php
     parametros:
         {
-	        "servicio_id": 3,
+	        "servicio_id": 18,
 	        "chofer_id": 4
         }
 
@@ -48,7 +48,7 @@ Siendo así mostrara la columna vigente, de lo contrario será "no vigente". Ten
             ruta: webservice/chofer_rutas_hora_llegada.php
             parametros: 
                 {
-	                "ruta_servicio_id": 6
+	                "ruta_servicio_id": 219
                 }
     
     NOTA 2: Dentro de los datos que se obtienen en la consulta se ecuentran "ruta_servicio_id", esto es necesario porque luego de la columna hora_salida , habrá una columna con nomnbre hora_salida(cabecera),
@@ -57,15 +57,15 @@ Siendo así mostrara la columna vigente, de lo contrario será "no vigente". Ten
             ruta: webservice/chofer_rutas_hora_salida.php
             parametros: 
                 {
-	                "ruta_servicio_id": 6
+	                "ruta_servicio_id": 219
                 }
 
     NOTA 3: Al final añadir una columna observacion tipo text,y añadir alugna observacion relevante para el chofer en caso sea necesaria( al costado del text un bton pequeño para que se envíe la observacion a la base de dato)
         ruta: webservice/chofer_rutas_observacion.php
             parametros: 
                 {
-	                "ruta_servicio_id": 6,
-                    "observacion": //alguna observacion en caso sea necesario
+	                "ruta_servicio_id": 219,
+                    "observacion": "Llego temprano al colegio"//alguna observacion en caso sea necesario
                 }
 
 
@@ -73,10 +73,10 @@ Siendo así mostrara la columna vigente, de lo contrario será "no vigente". Ten
     ruta: webservice/chofer_rutas_rango_fechas.php
      parametros:
             {
-	            "servicio_id": 3,
+	            "servicio_id": 18,
 	            "chofer_id": 4,
-                "fecha_inicio": //filtro por fecha  de inicio
-                "fecha_fin":  //filro por fecha final
+	            "fecha_inicio": "2020-03-05",
+	            "fecha_fin": "2020-03-05"
             }
 
 6) Partiendo del punto 3 en caso sean servicios no vigentes, tomar en cuenta la ruta y parametros del punto 5
@@ -89,7 +89,7 @@ Siendo así mostrara la columna vigente, de lo contrario será "no vigente". Ten
     ruta: webservice/position_update.php
     parametros:
             {
-	            "servicio_id": 3,
+	            "servicio_id": 18,
 	            "latitud_actual": //latitud,
                 "longitud_actual": //longitud
 
