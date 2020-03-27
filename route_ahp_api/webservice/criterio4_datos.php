@@ -1,6 +1,5 @@
 <?php
 
-
 header('Access-Control-Allow-Origin: *');
 
 require_once '../model/persona_criterio.php';
@@ -13,35 +12,48 @@ if (!isset($_SERVER["HTTP_TOKEN"])) {
 }
 
 
+
 try {
     $obj = new persona_criterio();
-    $resultado = $obj->c_atencion();
+    $resultado = $obj->c_antiguedad_vehicular();
 
     if($resultado){
         $suma = 0;
-        $menor = 0;
-        $menor = $resultado[0]['atencion'];
         for($i=0; $i<count($resultado); $i++){
-            $suma = $suma + abs($resultado[$i]['atencion']);
+            $suma = $suma + $resultado[$i]['promedio_antiguedad'];
+        }
 
+        $suma_valor_intermendio = 0;
 
+        for($i=0; $i<count($resultado); $i++){
+            if($resultado[$i]['promedio_antiguedad'] == 0){
+                $resultado[$i]['valor_intermedio'] =  round( $resultado[$i]['promedio_antiguedad']  ,3);
 
-            if($resultado[$i]['atencion'] < $menor){
-                $menor = $resultado[$i]['atencion'];
+            }else{
+                $resultado[$i]['valor_intermedio'] =  round( $suma/$resultado[$i]['promedio_antiguedad']  ,3);
+
             }
-        }
-        $suma_intervalo = 0;
-        for($i=0; $i<count($resultado); $i++){
-            $resultado[$i]['intervalo'] = abs($resultado[$i]['atencion'] + abs($menor));
-            $suma_intervalo = $suma_intervalo + $resultado[$i]['intervalo'];
+            $suma_valor_intermendio = $suma_valor_intermendio + $resultado[$i]['valor_intermedio'];
         }
 
-        for($i=0; $i<count($resultado); $i++){
-            $resultado[$i]['valor'] =  round( $resultado[$i]['intervalo']/$suma_intervalo  ,3);
 
+        for($i=0; $i<count($resultado); $i++){
+//            if($resultado[$i]['promedio_antiguedad'] == 0){
+//                $resultado[$i]['valor'] =  round( $resultado[$i]['promedio_antiguedad'] ,3);
+//
+//            }else{
+//                $resultado[$i]['valor'] =  round( $resultado[$i]['promedio_antiguedad']/ $suma  ,3);
+//
+//            }
+            if($resultado[$i]['valor_intermedio'] == 0){
+                $resultado[$i]['valor']  = round($resultado[$i]['valor_intermedio'],3);
+
+            }else{
+                $resultado[$i]['valor']  = round($resultado[$i]['valor_intermedio'] / $suma_valor_intermendio,3);
+
+            }
             $obj->create_update($resultado[$i]['id'], 4, $resultado[$i]['valor']);
         }
-
 
         Funciones::imprimeJSON(200, "",$resultado);
     }

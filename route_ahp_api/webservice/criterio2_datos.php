@@ -24,9 +24,19 @@ try {
             $suma = $suma + $resultado[$i]['precio'];
         }
 
+        $suma_valor_intermendio = 0;
+
         for($i=0; $i<count($resultado); $i++){
-            $resultado[$i]['valor'] =  round( $resultado[$i]['precio']/ $suma  ,3);
+            $resultado[$i]['valor_intermedio'] =  round( $suma/$resultado[$i]['precio']  ,3);
+            $suma_valor_intermendio = $suma_valor_intermendio + $resultado[$i]['valor_intermedio'];
+        }
+
+        for($i=0; $i<count($resultado); $i++){
+            $resultado[$i]['valor']  = round($resultado[$i]['valor_intermedio'] / $suma_valor_intermendio,3);
             $obj->create_update($resultado[$i]['id'], 2, $resultado[$i]['valor']);
+
+//            $resultado[$i]['valor'] =  round( $resultado[$i]['precio']/ $suma  ,3);
+//            $obj->create_update($resultado[$i]['id'], 2, $resultado[$i]['valor']);
         }
 
         Funciones::imprimeJSON(200, "",$resultado);

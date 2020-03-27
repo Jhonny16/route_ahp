@@ -28,7 +28,7 @@ try {
 
     $resultado = $obj->lista_asignacion($vehiculo_id, $chofer_id, $f1, $f2);
     if($resultado){
-        Funciones::imprimeJSON(200, "Se actualizo la hora de salida",$resultado);
+        Funciones::imprimeJSON(200, "Mostrar lista de conductores/vehiculos",$resultado);
     }
 
 } catch (Exception $exc) {

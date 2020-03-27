@@ -66,7 +66,7 @@ class criterio extends conexion
     {
 
         try {
-            $sql = "select * from criterio";
+            $sql = "select * from criterio order by id asc";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);

@@ -24,8 +24,6 @@ $fecha_fin = json_decode(file_get_contents("php://input"))->fecha_fin;
 
 
 try {
-
-
     $objper = new referencia();
     $objper->setTurno($turno);
     $objper->setGrado($grado);
@@ -41,7 +39,6 @@ try {
     } else {
         Funciones::imprimeJSON(203, "Error al momento de agregar", "");
     }
-
 
 } catch (Exception $exc) {
 

@@ -10,31 +10,56 @@ if (!isset($_SERVER["HTTP_TOKEN"])) {
     exit();
 }
 
+$operation = json_decode(file_get_contents("php://input"))->operation;
+if ($operation != 'Nuevo') {
+    $id = json_decode(file_get_contents("php://input"))->id;
+
+}
+
 $numero = json_decode(file_get_contents("php://input"))->numero;
 $nombre = json_decode(file_get_contents("php://input"))->nombre;
 $direccion = json_decode(file_get_contents("php://input"))->direccion;
-$latitud = json_decode(file_get_contents("php://input"))->latitud;
-$longitud = json_decode(file_get_contents("php://input"))->longitud;
+//$latitud = json_decode(file_get_contents("php://input"))->latitud;
+//$longitud = json_decode(file_get_contents("php://input"))->longitud;
 $director = json_decode(file_get_contents("php://input"))->director;
 
 
 try {
 
+    if ($operation == 'Nuevo') {
+        $obj = new colegio();
+        $obj->setNumero($numero);
+        $obj->setNombre($nombre);
+        $obj->setDireccion($direccion);
+//        $obj->setLatitud($latitud);
+//        $obj->setLongitud($longitud);
+        $obj->setDirector($director);
 
-    $objper = new colegio();
-    $objper->setNumero($numero);
-    $objper->setNombre($nombre);
-    $objper->setDireccion($direccion);
-    $objper->setLatitud($latitud);
-    $objper->setLongitud($longitud);
-    $objper->setDirector($director);
+        $result = $obj->create();
+        if ($result) {
+            Funciones::imprimeJSON(200, "Agregado Correcto", $result);
+        } else {
+            Funciones::imprimeJSON(203, "Error al momento de agregar", "");
+        }
+    }else{
+        $obj = new colegio();
+        $obj->setNumero($numero);
+        $obj->setNombre($nombre);
+        $obj->setDireccion($direccion);
+//        $obj->setLatitud($latitud);
+//        $obj->setLongitud($longitud);
+        $obj->setDirector($director);
+        $obj->setId($id);
 
-    $result = $objper->create();
-    if ($result) {
-        Funciones::imprimeJSON(200, "Agregado Correcto", $result);
-    } else {
-        Funciones::imprimeJSON(203, "Error al momento de agregar", "");
+        $result = $obj->update();
+        if ($result) {
+            Funciones::imprimeJSON(200, "Se actualizó correctamente\"", $result);
+        } else {
+            Funciones::imprimeJSON(203, "Error al momento de actualizar", "");
+        }
     }
+
+
 
 } catch (Exception $exc) {
 

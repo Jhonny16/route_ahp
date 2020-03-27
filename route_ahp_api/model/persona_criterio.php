@@ -10,7 +10,7 @@ class persona_criterio extends conexion
         try{
 
             $sql = "select p.id, p.nombre_completo as empresa,
-                           (case when SUM(rs.calificacion) > 0 then SUM(rs.calificacion) else 0 end)  as calificacion
+                           coalesce ((case when SUM(rs.calificacion) > 0 then SUM(rs.calificacion) else 0 end),0)  as calificacion
                     from persona p left join servicio s on p.id = s.empresa_id
                     left join servicio_detalle sd on s.id = sd.servicio_id 
                     left join ruta_servicio rs on rs.servicio_detalle_id = sd.id
@@ -31,9 +31,10 @@ class persona_criterio extends conexion
 
         try{
 
-            $sql = "select p.id, p.nombre_completo as empresa, (case when SUM(p2.costo) > 0 then SUM(p2.costo) else 0 end ) as precio
+            $sql = "select p.id, p.nombre_completo as empresa, 
+                  coalesce((case when SUM(p2.costo) > 0 then SUM(p2.costo) else 0 end ),0) as precio
                     from persona p left join precio p2 on p.id = p2.empresa_id
-                    where rol_id= 2
+                    where rol_id= 2 and (current_date between p2.fecha_inicio and p2.fecha_fin)
                     group by p.id, p.nombre_completo; ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
@@ -76,15 +77,16 @@ class persona_criterio extends conexion
         }
     }
 
-    public function c_atencion(){
+    public function c_antiguedad_vehicular(){
 
         try{
 
-            $sql = "select p.id, (p.ap_paterno ||' '|| p.ap_materno ||' '|| p.nombres) as reciclador,
-                           SUM(case when s.estado='Finalizado' then 1 else 0 end) - 
-                           SUM(case when s.estado='Cancelado' then 1 else 0 end) as atencion
-                    from servicio s inner join persona p on s.reciclador_id = p.id
-                    group by p.id,p.ap_paterno ||' '|| p.ap_materno ||'' || p.nombres;
+            $sql = "select
+                    e.id, e.nombre_completo as empresa,
+                    SUM(coalesce((extract(year from current_date) - anio_fabricacion),0))/(count(*)) as promedio_antiguedad
+                    from persona e left join vehiculo v on e.id = v.empresa_id
+                    where rol_id= 2
+                    group by  e.id, e.nombre_completo
                      ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();

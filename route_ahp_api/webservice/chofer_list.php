@@ -10,12 +10,13 @@ if (!isset($_SERVER["HTTP_TOKEN"])) {
 }
 
 $empresa_id = json_decode(file_get_contents("php://input"))->empresa_id;
+$chofer_id = json_decode(file_get_contents("php://input"))->chofer_id;
 
 
 try {
     $obj = new persona();
     $obj->setEmpresa($empresa_id);
-    $resultado = $obj->choferes_list();
+    $resultado = $obj->choferes_list($chofer_id);
 
     if($resultado){
         Funciones::imprimeJSON(200, "",$resultado);

@@ -364,14 +364,19 @@ class persona extends conexion
         }
     }
 
-    public function choferes_list()
+    public function choferes_list($chofer_id)
     {
 
         try {
-            $sql = "select *, (case when estado ='A' then 'Activo' else 'No Activo' end) 
-                    from persona where rol_id = 3 and (case when :p_empresa_id = 0 then TRUE else empresa_id = :p_empresa_id end)";
+            $sql = "select p.*, (case when p.estado ='A' then 'Activo' else 'No Activo' end),
+                    (select validate from conductor_licencia where conductor_id = p.id order by id desc limit 1 )
+                    as validate
+                    from persona as p where rol_id = 3 
+                    and (case when :p_empresa_id = 0 then TRUE else empresa_id = :p_empresa_id end)
+                    and (case when :p_chofer_id = 0 then TRUE else id = :p_chofer_id end)";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_empresa_id", $this->empresa);
+            $sentencia->bindParam(":p_chofer_id", $chofer_id);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;

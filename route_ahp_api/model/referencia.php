@@ -291,7 +291,7 @@ class referencia  extends conexion
         }
     }
 
-    public function detalle($solicitu){
+    public function detalle($solicitud){
         try {
             $sql = "select
                             'SOL-'|| st.id as solicitud,
@@ -311,7 +311,7 @@ class referencia  extends conexion
                     where st.id = :p_solicitud
                     ";
             $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_solicitud", $$solicitu);
+            $sentencia->bindParam(":p_solicitud", $solicitud);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;

@@ -146,14 +146,14 @@ class colegio extends conexion
         try {
 
 
-            $sql = "insert into colegio (numero, nombre, direccion, latitud, longitud, director_nombre)
-                    values (:p_numero,:p_nombre,:p_direccion,:p_latitud,:p_longitud,:p_director_nombre); ";
+            $sql = "insert into colegio (numero, nombre, direccion,director_nombre)
+                    values (:p_numero,:p_nombre,:p_direccion,:p_director_nombre); ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_numero", $this->numero);
             $sentencia->bindParam(":p_nombre", $this->nombre);
             $sentencia->bindParam(":p_direccion", $this->direccion);
-            $sentencia->bindParam(":p_latitud", $this->latitud);
-            $sentencia->bindParam(":p_longitud", $this->longitud);
+//            $sentencia->bindParam(":p_latitud", $this->latitud);
+//            $sentencia->bindParam(":p_longitud", $this->longitud);
             $sentencia->bindParam(":p_director_nombre", $this->director);
 
             $sentencia->execute();
@@ -165,6 +165,70 @@ class colegio extends conexion
 
         }
 
+    }
+
+    public function read()
+    {
+
+        try {
+            $sql = "select * from colegio where id = :p_id";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
+
+    public function update()
+    {
+        $this->dblink->beginTransaction();
+
+        try {
+
+            $sql = "update colegio set 
+                    numero = :p_numero,
+                    nombre = :p_nombre,
+                    direccion = :p_direccion,
+                    director_nombre = :p_director_nombre
+                    where id = :p_id ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_numero", $this->numero);
+            $sentencia->bindParam(":p_nombre", $this->nombre);
+            $sentencia->bindParam(":p_direccion", $this->direccion);
+            $sentencia->bindParam(":p_director_nombre", $this->director);
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $this->dblink->commit();
+
+            return true;
+
+        } catch (Exception $exc) {
+            $this->dblink->rollBack();
+            throw $exc;
+        }
+    }
+
+    public function update_direccion(){
+
+        $this->dblink->beginTransaction();
+        try {
+            $sql = "update colegio
+                    set direccion = :p_direccion, address_validate = true where id = :p_id ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_direccion", $this->direccion);
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $this->dblink->commit();
+
+            return true;
+
+        }catch (Exception $ex) {
+            throw $ex;
+        }
     }
 
 
