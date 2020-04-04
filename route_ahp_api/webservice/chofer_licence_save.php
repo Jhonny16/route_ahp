@@ -6,7 +6,7 @@
  * Time: 11:27 AM
  */
 
-require_once '../model/conductor_licencia.php';
+require_once '../model/licencia_certificado.php';
 require_once '../util/funciones/Funciones.clase.php';
 require_once 'tokenvalidar.php';
 
@@ -34,11 +34,12 @@ if($proccess == 'Create'){
         move_uploaded_file($image['tmp_name'], $ruta);
 
         try {
-            $obj = new conductor_licencia();
+            $obj = new licencia_certificado();
             $obj->setFechaRevalidacion($fecha_revalidacion);
             $obj->setDescripcion($name_image);
             $obj->setImagen($name_encriptado);
-            $obj->setConductorId($conductor_id);
+            $obj->setTipo("BRV");
+            $obj->setPersonaId($conductor_id);
 
             $result = $obj->create();
             if ($result) {
@@ -61,7 +62,7 @@ if($proccess == 'Create'){
     }
 }else{
     try {
-        $obj = new conductor_licencia();
+        $obj = new licencia_certificado();
         $obj->setObservacion($observacion);
         $obj->setValidate($validate);
         $obj->setId($id);

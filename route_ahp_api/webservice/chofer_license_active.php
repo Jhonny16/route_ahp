@@ -8,7 +8,7 @@
 
 header('Access-Control-Allow-Origin: *');
 
-require_once '../model/conductor_licencia.php';
+require_once '../model/licencia_certificado.php';
 require_once '../util/funciones/Funciones.clase.php';
 require_once 'tokenvalidar.php';
 
@@ -20,8 +20,8 @@ if (!isset($_SERVER["HTTP_TOKEN"])) {
 $conductor_id = json_decode(file_get_contents("php://input"))->conductor_id;
 
 try {
-    $obj = new conductor_licencia();
-    $obj->setConductorId($conductor_id);
+    $obj = new licencia_certificado();
+    $obj->setChoferId($conductor_id);
 
     $resultado = $obj->read();
 

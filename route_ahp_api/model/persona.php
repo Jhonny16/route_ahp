@@ -19,6 +19,25 @@ class persona extends conexion
     private $rol_id;
     private $documentos;
     private $empresa;
+    private $password;
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+
 
   /**
    * @return mixed
@@ -308,7 +327,6 @@ class persona extends conexion
                     celular = :p_celular,
                     direccion = :p_direccion,
                     sexo = :p_sexo,
-                    estado = :p_estado,
                     fecha_nacimiento = :p_fn
                     where id = :p_id ";
             $sentencia = $this->dblink->prepare($sql);
@@ -317,8 +335,32 @@ class persona extends conexion
             $sentencia->bindParam(":p_celular", $this->celular);
             $sentencia->bindParam(":p_direccion", $this->direccion);
             $sentencia->bindParam(":p_sexo", $this->sexo);
-            $sentencia->bindParam(":p_estado", $this->estado);
             $sentencia->bindParam(":p_fn", $this->fecha_nacimiento);
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $this->dblink->commit();
+
+            return true;
+
+        } catch (Exception $exc) {
+            $this->dblink->rollBack();
+            throw $exc;
+        }
+    }
+
+    public function update_password()
+    {
+        $this->dblink->beginTransaction();
+
+        try {
+
+            $password = password_hash($this->password, PASSWORD_DEFAULT);
+
+            $sql = "update persona set 
+                    password = :p_password
+                    where id = :p_id ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_password", $password);
             $sentencia->bindParam(":p_id", $this->id);
             $sentencia->execute();
             $this->dblink->commit();
@@ -369,7 +411,7 @@ class persona extends conexion
 
         try {
             $sql = "select p.*, (case when p.estado ='A' then 'Activo' else 'No Activo' end),
-                    (select validate from conductor_licencia where conductor_id = p.id order by id desc limit 1 )
+                    (select validate from licencias_certificados where chofer_id = p.id order by id desc limit 1 )
                     as validate
                     from persona as p where rol_id = 3 
                     and (case when :p_empresa_id = 0 then TRUE else empresa_id = :p_empresa_id end)
@@ -512,6 +554,21 @@ class persona extends conexion
         }
 
 
+    }
+
+    public function perfil(){
+        try {
+
+            $sql = "SELECT * from persona where id = :p_id";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_id", $this->id);
+            $sentencia->execute();
+            $resultado = $sentencia->fetch();
+            return $resultado;
+
+        } catch (Exception $ex) {
+            throw $ex;
+        }
     }
 
 
