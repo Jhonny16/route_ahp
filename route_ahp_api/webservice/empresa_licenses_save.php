@@ -130,6 +130,28 @@ if ($proccess == 'create') {
 
     try {
 
+        $anio = 0;
+        $type_licences = new tipo_licencias();
+        $res_type = $type_licences->lista();
+
+        for ($i = 0; $i < count($res_type); $i++) {
+            if ($res_type[$i]['id'] == $tipo_licencia) {
+                $anio = $res_type[$i]['vigencia'];
+            }
+        }
+        $date1 = new DateTime($fecha_inicial);
+        $date2 = new DateTime($fecha_final);
+        $diff = $date1->diff($date2);
+
+        if (round($diff->days / 365, 0) == $anio) {
+
+        } else {
+            Funciones::imprimeJSON(203, "Tener en cuenta que la validez es por " . $anio . " años !!!.
+            Verique el rango de fecha ingresada", $anio);
+            exit();
+        }
+
+
         $obj = new licencia_certificado();
         $obj->setObservacion($observacion);
         $obj->setDescripcion($name_image);

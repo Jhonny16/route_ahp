@@ -571,5 +571,57 @@ class persona extends conexion
         }
     }
 
+    public function reporte_empresas_priorizadas(){
+        try {
+
+            $sql = "select
+                        pe.id,
+                               pe.nombre_completo,
+                        (select valor * 100 from persona_criterio where criterio_id = 1 and persona_id = pe.id) as calidad_servicio,
+                        (select valor * 100 from persona_criterio where criterio_id = 2 and persona_id = pe.id) as precio,
+                        (select valor * 100 from persona_criterio where criterio_id = 3 and persona_id = pe.id) as puntualidad,
+                        (select valor * 100 from persona_criterio where criterio_id = 4 and persona_id = pe.id) as antiguedad_vehicular,
+                        pe.valor*100 valor_empresa ,
+                         (case
+                              when (select validate from licencias_certificados
+                                    where tipo_id = 2 and empresa_id = pe.id and (current_date between fecha_inicio and fecha_revalidacion)) is null
+                              then FALSE
+                              when (select validate from licencias_certificados
+                                    where tipo_id = 2 and empresa_id = pe.id and (current_date between fecha_inicio and fecha_revalidacion)) = false
+                                then FALSE
+                              else TRUE
+                              end)
+                             as cedula_autorizacion,
+                        (case
+                          when  (select count(id) from vehiculo where empresa_id = pe.id) = 0 then 0 else
+                            ((select count(validate) from licencias_certificados where tipo_id = 2 and empresa_id = pe.id
+                              order by 1 desc limit 1) * 100  /  (select count(id) from vehiculo where empresa_id = pe.id) )
+                          end)
+                               as tarjeta_unica_circulacion,
+                        (case
+                           when  count(c.id) = 0 then 0 else
+                            ((select count(validate) from licencias_certificados where tipo_id = 3 and empresa_id = pe.id
+                              order by 1 desc limit 1) * 100  /  count(c.id) )
+                          end) as credencial_conductor,
+                        (case
+                           when  count(c.id) = 0 then 0 else
+                            ((select count(validate) from licencias_certificados where tipo_id = 4 and empresa_id = pe.id
+                              order by 1 desc limit 1) * 100  /  count(c.id) )
+                          end) as brevete_conductor
+                        from
+                        persona pe left join persona c on pe.id = c.empresa_id
+                        where pe.rol_id = 2
+                        group by pe.id
+                        order by pe.valor desc ";
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll();
+            return $resultado;
+
+        } catch (Exception $ex) {
+            throw $ex;
+        }
+    }
+
 
 }

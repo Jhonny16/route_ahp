@@ -31,11 +31,18 @@ class persona_criterio extends conexion
 
         try{
 
-            $sql = "select p.id, p.nombre_completo as empresa, 
-                  coalesce((case when SUM(p2.costo) > 0 then SUM(p2.costo) else 0 end ),0) as precio
-                    from persona p left join precio p2 on p.id = p2.empresa_id
-                    where rol_id= 2 and (current_date between p2.fecha_inicio and p2.fecha_fin)
-                    group by p.id, p.nombre_completo; ";
+            $sql = "select
+                           e.id, e.nombre_completo as empresa,
+                           (case
+                             when    
+                                 (select SUM(costo) from precio 
+                                     where precio.empresa_id = e.id and current_date between fecha_inicio and fecha_fin) > 0
+                                then   (select SUM(costo) from precio 
+                                     where precio.empresa_id = e.id and current_date between fecha_inicio and fecha_fin)
+                                else 0
+                             end) as precio
+                    from persona as e
+                    where rol_id= 2";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);

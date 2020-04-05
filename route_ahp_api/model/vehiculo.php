@@ -11,6 +11,25 @@ class vehiculo extends conexion
     private $color;
     private $empresa_id;
     private $estado;
+    private $anio_fabricacion;
+
+    /**
+     * @return mixed
+     */
+    public function getAnioFabricacion()
+    {
+        return $this->anio_fabricacion;
+    }
+
+    /**
+     * @param mixed $anio_fabricacion
+     */
+    public function setAnioFabricacion($anio_fabricacion)
+    {
+        $this->anio_fabricacion = $anio_fabricacion;
+    }
+
+
 
     /**
      * @return mixed
@@ -114,7 +133,8 @@ class vehiculo extends conexion
     {
 
         try {
-            $sql = "select v.id, v.placa, v.marca, v.color, p.nombre_completo as empresa 
+            $sql = "select v.id, v.placa, v.marca, v.color, p.nombre_completo as empresa,
+                      v.anio_fabricacion
                     from vehiculo v inner join persona p on p.id = v.empresa_id
                         where (case when :p_empresa_id = 0 then TRUE else v.empresa_id = :p_empresa_id end)
                         and (case when :p_vehiculo_id = 0 then TRUE else v.id = :p_vehiculo_id end)";
@@ -189,14 +209,16 @@ class vehiculo extends conexion
         try {
 
 
-            $sql = "insert into vehiculo (placa, marca, color, empresa_id, activo) 
-                                  values (:p_placa, :p_marca, :p_color, :p_empresa_id, :p_estado)";
+            $sql = "insert into vehiculo (placa, marca, color, empresa_id, activo, anio_fabricacion) 
+                                  values (:p_placa, :p_marca, :p_color, :p_empresa_id, :p_estado, p_anio_fabricacion)";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_placa", $this->placa);
             $sentencia->bindParam(":p_marca", $this->marca);
             $sentencia->bindParam(":p_color", $this->color);
             $sentencia->bindParam(":p_empresa_id", $this->empresa_id);
             $sentencia->bindParam(":p_estado", $this->estado);
+            $sentencia->bindParam(":p_anio_fabricacion", $this->anio_fabricacion);
+
             $sentencia->execute();
             return True;
 
@@ -228,13 +250,15 @@ class vehiculo extends conexion
             $sql = "update vehiculo set 
                     placa = :p_placa,
                     marca = :p_marca,
-                    color = :p_colpr,
+                    color = :p_color,
+                    anio_fabricacion = :p_anio_fabricacion,
                     activo = :p_estado
                     where id = :p_id ";
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_placa", $this->placa);
             $sentencia->bindParam(":p_marca", $this->marca);
-            $sentencia->bindParam(":p_colpr", $this->color);
+            $sentencia->bindParam(":p_color", $this->color);
+            $sentencia->bindParam(":p_anio_fabricacion", $this->anio_fabricacion);
             $sentencia->bindParam(":p_estado", $this->estado);
             $sentencia->bindParam(":p_id", $this->id);
             $sentencia->execute();

@@ -33,7 +33,7 @@ try {
 
     $resultado = $obj->create();
     if($resultado){
-        Funciones::imprimeJSON(200, "Se generó el servicio ",$resultado);
+        Funciones::imprimeJSON(200, "Se ha creado un nuevo precio!  ",$resultado);
     }else{
         Funciones::imprimeJSON(203, "No hay datos","");
     }

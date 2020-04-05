@@ -71,19 +71,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webservice/empresa_licenses_save.php">
+        <entry file="file://$PROJECT_DIR$/model/persona_criterio.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
+            <state relative-caret-position="1118">
+              <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d34bdbb6-7ee0-4c0c-81a8-37fd54ab71e6/console.sql">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/vehiculo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="47" selection-start-line="47" selection-end-line="54" selection-end-column="72" />
+            <state relative-caret-position="196">
+              <caret line="136" column="40" selection-start-line="136" selection-start-column="40" selection-end-line="136" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webservice/reporte_empresas_priorizadas.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webservice/precios_list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="2" selection-start-line="2" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webservice/vehiculo_create.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="18" column="83" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webservice/vehiculo_list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -91,47 +127,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webservice/criterio2_datos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="34" column="53" lean-forward="true" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+            <state relative-caret-position="585">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/licencia_certificado.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="261" column="70" selection-start-line="261" selection-start-column="70" selection-end-line="261" selection-end-column="70" />
-              <folding>
-                <element signature="e#6#89#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webservice/empresa_licencias_search.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="60" selection-start-line="60" selection-end-line="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webservice/servicios_lista_por_empresa.php">
+        <entry file="file://$PROJECT_DIR$/webservice/criterio4_datos.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+              <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/servicio.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d34bdbb6-7ee0-4c0c-81a8-37fd54ab71e6/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="340" column="52" selection-start-line="340" selection-start-column="39" selection-end-line="340" selection-end-column="52" />
+            <state>
+              <caret column="5" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -170,19 +185,14 @@
         <option value="$PROJECT_DIR$/webservice/chofer_list.php" />
         <option value="$PROJECT_DIR$/webservice/vehiculo_list.php" />
         <option value="$PROJECT_DIR$/webservice/colegio_read.php" />
-        <option value="$PROJECT_DIR$/webservice/vehiculo_create.php" />
         <option value="$PROJECT_DIR$/webservice/colegio_create.php" />
         <option value="$PROJECT_DIR$/model/colegio.php" />
         <option value="$PROJECT_DIR$/webservice/colegio_direccion_update.php" />
-        <option value="$PROJECT_DIR$/webservice/precio_create.php" />
         <option value="$PROJECT_DIR$/model/precio.php" />
         <option value="$PROJECT_DIR$/webservice/chofer_vehiculo_asignacion_read.php" />
-        <option value="$PROJECT_DIR$/model/vehiculo.php" />
         <option value="$PROJECT_DIR$/webservice/chofer_vehiculo_asignacion_create.php" />
         <option value="$PROJECT_DIR$/webservice/chofer_vehiculo_asignacion_list.php" />
         <option value="$PROJECT_DIR$/model/criterio.php" />
-        <option value="$PROJECT_DIR$/webservice/criterio2_datos.php" />
-        <option value="$PROJECT_DIR$/model/persona_criterio.php" />
         <option value="$PROJECT_DIR$/webservice/criterio4_datos.php" />
         <option value="$PROJECT_DIR$/model/referencia.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
@@ -198,11 +208,17 @@
         <option value="$PROJECT_DIR$/webservice/empresa_perfil.php" />
         <option value="$PROJECT_DIR$/webservice/register_person.php" />
         <option value="$PROJECT_DIR$/webservice/persona_perfil_update.php" />
-        <option value="$PROJECT_DIR$/model/persona.php" />
-        <option value="$PROJECT_DIR$/webservice/empresa_licenses_save.php" />
         <option value="$PROJECT_DIR$/model/licencia_certificado.php" />
         <option value="$PROJECT_DIR$/webservice/empresa_licencias_search.php" />
+        <option value="$PROJECT_DIR$/webservice/empresa_licenses_save.php" />
+        <option value="$PROJECT_DIR$/webservice/precio_create.php" />
+        <option value="$PROJECT_DIR$/model/persona_criterio.php" />
+        <option value="$PROJECT_DIR$/webservice/criterio2_datos.php" />
+        <option value="$PROJECT_DIR$/webservice/vehiculo_create.php" />
+        <option value="$PROJECT_DIR$/model/vehiculo.php" />
+        <option value="$PROJECT_DIR$/webservice/reporte_empresas_priorizadas.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d34bdbb6-7ee0-4c0c-81a8-37fd54ab71e6/console.sql" />
+        <option value="$PROJECT_DIR$/model/persona.php" />
       </list>
     </option>
   </component>
@@ -219,7 +235,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,6 +256,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -539,18 +555,20 @@
       <workItem from="1585748162462" duration="14689000" />
       <workItem from="1585804506686" duration="3427000" />
       <workItem from="1585859148798" duration="19336000" />
-      <workItem from="1585917830045" duration="14568000" />
+      <workItem from="1585917830045" duration="14794000" />
+      <workItem from="1586016862754" duration="20098000" />
+      <workItem from="1586048331552" duration="2151000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140661000" />
+    <option name="totallyTimeSpent" value="163136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="739" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27039275" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2779456" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -560,7 +578,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="7" visible="true" weight="0.33011273" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="7" visible="true" weight="0.3478261" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32903227" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
@@ -638,48 +656,6 @@
     <state x="381" y="113" width="603" height="512" key="find.popup/0.0.1366.735@0.0.1366.735" timestamp="1584569695374" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webservice/colegio_direccion_update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/posicion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1235">
-          <caret line="95" column="1" selection-start-line="95" selection-start-column="1" selection-end-line="114" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/position_update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/precios_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/servicio_create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="2" selection-start-line="2" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/precio_create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="21" column="73" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webservice/chofer_vehiculo_asignacion_read.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -718,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/persona_criterio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="94" column="30" lean-forward="true" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webservice/criterio3_datos.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -740,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/criterio4_datos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="29" column="61" lean-forward="true" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webservice/criterios_list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -758,13 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="68" column="58" selection-start-line="68" selection-start-column="58" selection-end-line="68" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/vehiculo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3211">
-          <caret line="247" column="9" lean-forward="true" selection-start-line="223" selection-start-column="7" selection-end-line="247" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -870,13 +825,6 @@
     <entry file="file://$PROJECT_DIR$/webservice/empresa_read.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/persona.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="356" selection-start-line="356" selection-end-line="357" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webservice/persona_perfil_update.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -913,16 +861,9 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d34bdbb6-7ee0-4c0c-81a8-37fd54ab71e6/console_1.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webservice/empresa_licenses_save.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="141" column="28" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/licencia_certificado.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="3328">
           <caret line="261" column="70" selection-start-line="261" selection-start-column="70" selection-end-line="261" selection-end-column="70" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
@@ -932,7 +873,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webservice/empresa_licencias_search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="715">
           <caret line="60" selection-start-line="60" selection-end-line="61" />
         </state>
       </provider>
@@ -940,28 +881,105 @@
     <entry file="file://$PROJECT_DIR$/webservice/servicios_lista_por_empresa.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/servicio.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
+        <state relative-caret-position="4420">
           <caret line="340" column="52" selection-start-line="340" selection-start-column="39" selection-end-line="340" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/matriz_normalizada.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/precio_create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="35" column="67" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/empresa_licenses_save.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/persona.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="584" column="24" selection-start-line="584" selection-start-column="24" selection-end-line="584" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/persona_criterio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1118">
+          <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/reporte_empresas_priorizadas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/precios_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="2" selection-start-line="2" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/vehiculo_create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="83" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/vehiculo_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webservice/criterio2_datos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="34" column="53" lean-forward="true" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+        <state relative-caret-position="585">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservice/criterio4_datos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/vehiculo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="136" column="40" selection-start-line="136" selection-start-column="40" selection-end-line="136" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d34bdbb6-7ee0-4c0c-81a8-37fd54ab71e6/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="47" selection-start-line="47" selection-end-line="54" selection-end-column="72" />
+        <state>
+          <caret column="5" selection-end-line="1" />
         </state>
       </provider>
     </entry>

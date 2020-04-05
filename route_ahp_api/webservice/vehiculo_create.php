@@ -16,6 +16,7 @@ $marca = json_decode(file_get_contents("php://input"))->marca;
 $color = json_decode(file_get_contents("php://input"))->color;
 $empresa_id = json_decode(file_get_contents("php://input"))->empresa_id;
 $estado = json_decode(file_get_contents("php://input"))->estado;
+$anio_fabricacion = json_decode(file_get_contents("php://input"))->anio_fabricacion;
 
 try {
 
@@ -27,6 +28,7 @@ try {
         $obj->setColor($color);
         $obj->setEmpresaId($empresa_id);
         $obj->setEstado($estado);
+        $obj->setAnioFabricacion($anio_fabricacion);
 
         $result = $obj->create();
         if ($result) {
@@ -44,6 +46,7 @@ try {
         $obj->setColor($color);
         $obj->setEmpresaId($empresa_id);
         $obj->setEstado($estado);
+        $obj->setAnioFabricacion($anio_fabricacion);
         $obj->setId($id);
 
         $result = $obj->update();

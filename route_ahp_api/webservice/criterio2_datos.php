@@ -27,12 +27,24 @@ try {
         $suma_valor_intermendio = 0;
 
         for($i=0; $i<count($resultado); $i++){
-            $resultado[$i]['valor_intermedio'] =  round( $suma/$resultado[$i]['precio']  ,3);
+            if($resultado[$i]['precio'] == 0){
+                $resultado[$i]['valor_intermedio'] =  round( $resultado[$i]['precio']  ,3);
+
+            }else{
+                $resultado[$i]['valor_intermedio'] =  round( $suma/$resultado[$i]['precio']  ,3);
+            }
             $suma_valor_intermendio = $suma_valor_intermendio + $resultado[$i]['valor_intermedio'];
+
         }
 
         for($i=0; $i<count($resultado); $i++){
-            $resultado[$i]['valor']  = round($resultado[$i]['valor_intermedio'] / $suma_valor_intermendio,3);
+            if($resultado[$i]['valor_intermedio'] == 0){
+                $resultado[$i]['valor']  = round($resultado[$i]['valor_intermedio'],3);
+
+            }else{
+                $resultado[$i]['valor']  = round($resultado[$i]['valor_intermedio'] / $suma_valor_intermendio,3);
+
+            }
             $obj->create_update($resultado[$i]['id'], 2, $resultado[$i]['valor']);
 
 //            $resultado[$i]['valor'] =  round( $resultado[$i]['precio']/ $suma  ,3);
