@@ -103,7 +103,7 @@ class posicion extends conexion
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_servicio_id", $this->servicio_id);
             $sentencia->bindParam(":p_latitud", $this->latitud_actual);
-            $sentencia->bindParam(":p_lon_actual", $this->longitud_actual);
+            $sentencia->bindParam(":p_longitud", $this->longitud_actual);
             $sentencia->execute();
             $this->dblink->commit();
 
