@@ -3,7 +3,7 @@
 
 header('Access-Control-Allow-Origin: *');
 
-require_once '../model/ruta_servicio.php';
+require_once '../model/posicion.php';
 require_once '../util/funciones/Funciones.clase.php';
 require_once 'tokenvalidar.php';
 
